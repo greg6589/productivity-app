@@ -1,3 +1,7 @@
+:root {
+  --importantColor: rgb(175, 94, 94);
+}
+
 .navigation {
   display: flex;
   flex-direction: row;
@@ -21,11 +25,11 @@
 }
 
 .navigation-item a:hover {
-  border-bottom: 3px solid red;
-  color: red;
+  border-bottom: 3px solid var(--importantColor);
+  color: var(--importantColor);
 }
 
 a.active {
-  color: red;
-  border-bottom: 3px solid red;
+  color: var(--importantColor);
+  border-bottom: 3px solid var(--importantColor);
 }

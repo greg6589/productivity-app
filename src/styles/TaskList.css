@@ -1,0 +1,42 @@
+.taskList {
+  margin: 0 auto;
+  max-width: 95%;
+}
+.taskList h2 {
+  font-size: 20px;
+}
+
+.taskList-task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(81, 133, 146);
+}
+.task-titel {
+  flex-basis: 70%;
+}
+.task-title-date {
+  font-style: italic;
+  font-size: 14px;
+  color: rgb(41, 41, 41);
+}
+.task-buttons {
+  flex-basis: 30%;
+  align-self: center;
+}
+
+.deleteDoneButton,
+.taskDoneButton {
+  font-size: 26px;
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(71, 71, 71);
+  padding: 5px;
+}
+.emptyListMessage {
+  padding: 25px 0;
+  font-size: 16px;
+}
