@@ -1,0 +1,31 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: black;
+}
+
+.navigation-item {
+  list-style: none;
+}
+
+.navigation-item a {
+  display: block;
+  padding: 10px 20px;
+  border-bottom: 3px solid black;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.navigation-item a:hover {
+  border-bottom: 3px solid red;
+  color: red;
+}
+
+a.active {
+  color: red;
+  border-bottom: 3px solid red;
+}
