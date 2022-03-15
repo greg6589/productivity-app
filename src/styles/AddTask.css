@@ -1,0 +1,75 @@
+.addTaskForm {
+  max-width: 85%;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.addTaskForm__inputTask {
+  flex-basis: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.addTaskForm__important {
+  flex-basis: 30%;
+  align-self: center;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.important__label {
+  font-size: 16px;
+  cursor: pointer;
+}
+.important__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.important__checkbox:after {
+  content: "\2714";
+  color: white;
+  font-size: 18px;
+  display: none;
+}
+.important__checkbox:checked {
+  background-color: var(--importantColor);
+  border: 1px solid var(--importantColor);
+}
+.important__checkbox:checked:after {
+  display: block;
+}
+
+.addTaskForm__date {
+  flex-basis: 70%;
+  margin-bottom: 5px;
+}
+.date__label {
+  padding-right: 10px;
+  font-size: 16px;
+}
+.date__input {
+  padding: 5px;
+  font-size: 16px;
+}
+.addTaskForm__button {
+  font-size: 16px;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  background-color: var(--importantColor);
+  border: 1px solid var(--importantColor);
+  color: white;
+}

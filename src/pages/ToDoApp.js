@@ -4,25 +4,9 @@ import TaskList from "../components/TaskList";
 import "../styles/ToDoAppPage.css";
 
 class ToDoApp extends Component {
+  counter = 0;
   state = {
-    tasks: [
-      {
-        id: 0,
-        text: "Task Number 1",
-        date: "2022-05-15",
-        important: true,
-        active: false,
-        finishDate: null,
-      },
-      {
-        id: 1,
-        text: "Task Number 2",
-        date: "2022-06-12",
-        important: false,
-        active: true,
-        finishDate: null,
-      },
-    ],
+    tasks: [],
   };
 
   deleteTask = (id) => {
@@ -31,10 +15,24 @@ class ToDoApp extends Component {
     this.setState({ tasks });
   };
 
+  addTask = (text, date, important) => {
+    const task = {
+      id: this.counter,
+      text: text,
+      date: date,
+      important: important,
+      active: true,
+      finishDate: null,
+    };
+    this.counter++;
+    this.setState((prevState) => ({ tasks: [...prevState.tasks, task] }));
+    return true;
+  };
+
   render() {
     return (
       <div className="ToDoApp">
-        <AddTask />
+        <AddTask addTask={this.addTask} />
         <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} />
       </div>
     );

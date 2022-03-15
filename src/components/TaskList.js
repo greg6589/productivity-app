@@ -32,7 +32,7 @@ const TaskList = (props) => {
         <h2>
           Done: <span>{done.length}</span>
         </h2>
-        <ul className="taskList-tasksWrapper">{doneTasks}</ul>
+        <ul>{doneTasks}</ul>
       </div>
     </>
   );

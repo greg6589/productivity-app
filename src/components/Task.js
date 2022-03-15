@@ -10,18 +10,18 @@ const Task = (props) => {
 
   if (active) {
     return (
-      <li style={important ? style : null} className="taskList-task">
-        <div className="task-titel">
+      <li style={important ? style : null} className="task">
+        <div className="task__titel">
           <p>{text}</p>
-          <p className="task-title-date">{date}</p>
+          <p className="task__title-date">{date}</p>
         </div>
-        <div className="task-buttons">
-          <button className="taskDoneButton">
+        <div className="task__buttons">
+          <button className="done-button">
             <FontAwesomeIcon icon={faCheck} />
           </button>
           <button
             onClick={() => props.deleteTask(id)}
-            className="deleteDoneButton"
+            className="delete-button"
           >
             <FontAwesomeIcon icon={faTrashCan} />
           </button>
@@ -31,17 +31,14 @@ const Task = (props) => {
   } else {
     const finish = new Date(finishDate).toLocaleString();
     return (
-      <li style={important ? style : null} className="taskList-task">
-        <div className="task-titel">
+      <li style={important ? style : null} className="task">
+        <div className="task__titel">
           <p>{text}</p>
-          <p className="task-title-date">
+          <p className="task__title-date">
             planned: {date} / completed {finish}
           </p>
         </div>
-        <button
-          onClick={() => props.deleteTask(id)}
-          className="deleteDoneButton"
-        >
+        <button onClick={() => props.deleteTask(id)} className="delete-button">
           <FontAwesomeIcon icon={faTrashCan} />
         </button>
       </li>
