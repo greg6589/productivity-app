@@ -16,7 +16,10 @@ const Task = (props) => {
           <p className="task__title-date">{date}</p>
         </div>
         <div className="task__buttons">
-          <button className="done-button">
+          <button
+            className="done-button"
+            onClick={() => props.changeStatus(id)}
+          >
             <FontAwesomeIcon icon={faCheck} />
           </button>
           <button

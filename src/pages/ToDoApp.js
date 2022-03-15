@@ -29,11 +29,28 @@ class ToDoApp extends Component {
     return true;
   };
 
+  changeStatus = (id) => {
+    const tasks = [...this.state.tasks];
+    tasks.forEach((task) => {
+      if (task.id === id) {
+        task.active = false;
+        task.finishDate = new Date().getTime();
+      }
+    });
+    this.setState({
+      tasks,
+    });
+  };
+
   render() {
     return (
       <div className="ToDoApp">
         <AddTask addTask={this.addTask} />
-        <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} />
+        <TaskList
+          tasks={this.state.tasks}
+          deleteTask={this.deleteTask}
+          changeStatus={this.changeStatus}
+        />
       </div>
     );
   }

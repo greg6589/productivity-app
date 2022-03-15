@@ -7,7 +7,12 @@ const TaskList = (props) => {
   const done = props.tasks.filter((task) => !task.active);
 
   const activeTasks = active.map((task) => (
-    <Task key={task.id} task={task} deleteTask={props.deleteTask} />
+    <Task
+      key={task.id}
+      task={task}
+      deleteTask={props.deleteTask}
+      changeStatus={props.changeStatus}
+    />
   ));
 
   const doneTasks = done.map((task) => (
