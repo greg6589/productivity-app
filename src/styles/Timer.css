@@ -1,0 +1,17 @@
+.timer {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30vh;
+}
+.timer_display {
+  font-size: 44px;
+}
+.timer_button {
+  font-size: 24px;
+  height: 44px;
+  width: 100px;
+  text-transform: uppercase;
+  margin: 25px 5px;
+  background-color: white;
+  border: 3px solid black;
+}

@@ -1,0 +1,56 @@
+.timer-settings {
+  position: absolute;
+  top: 42px;
+  left: -300px;
+  width: 300px;
+  height: calc(100vh - 42px);
+  background-color: rgb(39, 39, 39);
+  color: white;
+  text-align: center;
+  transition: 0.5s;
+}
+.timer-settings_label {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 20px;
+  padding: 50px 0 10px 0;
+}
+.timer-settings-input {
+  width: 40px;
+  font-size: 20px;
+  border: 2px solid white;
+  text-align: center;
+}
+.timer-settings_button-set {
+  display: block;
+  margin: 0 auto;
+}
+
+.timer-settings_button {
+  font-size: 20px;
+  width: 40px;
+  color: white;
+  background-color: rgb(39, 39, 39);
+  border: 2px solid white;
+}
+.timer-settings_button-set {
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 80px;
+  height: 30px;
+  color: white;
+  background-color: rgb(39, 39, 39);
+  border: 2px solid white;
+  margin-top: 50px;
+}
+.timer-settings-show {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: gray;
+  border: 1px solid gray;
+}
