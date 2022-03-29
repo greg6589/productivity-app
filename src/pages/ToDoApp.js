@@ -12,15 +12,26 @@ class ToDoApp extends Component {
 
   componentDidMount() {
     this.localTasks = JSON.parse(localStorage.getItem("localTasksArray"));
-    if (localStorage.getItem("localTasksArray")) {
+    if (this.localTasks) {
       this.setState({
         tasks: this.localTasks,
       });
     } else {
+      this.localTasks = localStorage.setItem(
+        "localTasksArray",
+        JSON.stringify(this.state.tasks)
+      );
       this.setState({
-        this: [],
+        tasks: [],
       });
     }
+  }
+
+  componentDidUpdate() {
+    this.localTasks = localStorage.setItem(
+      "localTasksArray",
+      JSON.stringify(this.state.tasks)
+    );
   }
 
   addTask = (text, date, important) => {
@@ -32,36 +43,29 @@ class ToDoApp extends Component {
       active: true,
       finishDate: null,
     };
-
-    this.localTasks = [...this.localTasks, task];
-    localStorage.setItem("localTasksArray", JSON.stringify(this.localTasks));
     this.setState({
-      tasks: this.localTasks,
+      tasks: [...this.state.tasks, task],
     });
-
     this.counter++;
     return true;
   };
 
   changeStatus = (id) => {
-    this.localTasks.forEach((task) => {
+    this.state.tasks.forEach((task) => {
       if (task.id === id) {
         task.active = false;
         task.finishDate = new Date().getTime();
       }
     });
-    localStorage.setItem("localTasksArray", JSON.stringify(this.localTasks));
     this.setState({
-      tasks: this.localTasks,
+      tasks: this.state.tasks,
     });
   };
 
   deleteTask = (id) => {
-    let tasks = [...this.localTasks];
+    let tasks = [...this.state.tasks];
     tasks = tasks.filter((task) => task.id !== id);
-    this.localTasks = tasks;
-    localStorage.setItem("localTasksArray", JSON.stringify(this.localTasks));
-    this.setState({ tasks: this.localTasks });
+    this.setState({ tasks: tasks });
   };
 
   render() {
