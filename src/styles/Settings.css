@@ -18,6 +18,7 @@
 }
 .timer-settings-input {
   width: 40px;
+  height: 40px;
   font-size: 20px;
   border: 2px solid white;
   text-align: center;
@@ -30,6 +31,7 @@
 .timer-settings_button {
   font-size: 20px;
   width: 40px;
+  height: 40px;
   color: white;
   background-color: rgb(39, 39, 39);
   border: 2px solid white;
