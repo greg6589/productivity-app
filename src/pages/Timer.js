@@ -1,53 +1,56 @@
-import React, { Component } from "react";
-
+import React, { useState, useEffect } from "react";
+import Counter from "../components/Counter";
+import SetingsContext from "../components/SettingsContext";
 import Settings from "../components/Settings";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGear, faXmark } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Timer.css";
-class Timer extends Component {
-  sessionTimeLocal;
-  breakTimeLocal;
-  state = { sessionTime: 25, breakTime: 5 };
 
-  componentDidMount() {
-    this.sessionTimeLocal = localStorage.getItem("sessionTime");
-    this.breakTimeLocal = localStorage.getItem("breakTime");
-    if (this.sessionTimeLocal) {
-      this.setState({ sessionTime: this.sessionTimeLocal });
-    } else {
-      localStorage.setItem("sessionTime", `${this.state.sessionTime}`);
+const Timer = () => {
+  const [settingsIsActive, setSettingsIsActive] = useState(false);
+  const [sessionTime, setSessionTime] = useState(30);
+  const [breakTime, setBreakTime] = useState(15);
+
+  useEffect(() => {
+    let sessionTimeLocal = parseInt(localStorage.getItem("sessionTime"));
+    let breakTimeLocal = parseInt(localStorage.getItem("breakTime"));
+    if (sessionTimeLocal) {
+      setSessionTime(sessionTimeLocal);
     }
-    if (this.breakTimeLocal) {
-      this.setState({ breakTime: this.breakTimeLocal });
-    } else {
-      localStorage.setItem("breakTime", `${this.state.breakTime}`);
+    if (breakTimeLocal) {
+      setBreakTime(breakTimeLocal);
     }
-  }
-  componentDidUpdate() {
-    this.sessionTimeLocal = localStorage.setItem(
-      "sessionTime",
-      this.state.sessionTime
-    );
-    this.breakTimeLocal = localStorage.setItem(
-      "breakTime",
-      this.state.breakTime
-    );
-  }
+  }, []);
 
-  timeUpdate = (sessionTime, breakTime) => {
-    this.setState({ sessionTime, breakTime });
-  };
-
-  render() {
-    return (
-      <>
-        <Settings onTimeChage={this.timeUpdate} />
-        <div className="timer">
-          <div className="timer_display">{this.state.sessionTime}</div>
-          <button className="timer_button start">Start</button>
-          <button className="timer_button stop">Stop</button>
-        </div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <button
+        onClick={() =>
+          settingsIsActive
+            ? setSettingsIsActive(false)
+            : setSettingsIsActive(true)
+        }
+        className="timer-settings-show"
+      >
+        {settingsIsActive ? (
+          <FontAwesomeIcon icon={faXmark} />
+        ) : (
+          <FontAwesomeIcon icon={faGear} />
+        )}
+      </button>
+      <SetingsContext.Provider
+        value={{
+          sessionTime,
+          breakTime,
+          setSessionTime,
+          setBreakTime,
+          setSettingsIsActive,
+        }}
+      >
+        {settingsIsActive ? <Settings /> : <Counter />}
+      </SetingsContext.Provider>
+    </>
+  );
+};
 
 export default Timer;

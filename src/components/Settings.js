@@ -1,140 +1,99 @@
-import React, { Component } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear, faXmark } from "@fortawesome/free-solid-svg-icons";
+import React, { useContext } from "react";
+
 import "../styles/Settings.css";
+import SettingsContext from "./SettingsContext";
 
-class Settings extends Component {
-  state = {
-    settingsIsActive: false,
-    sessionTime: 25,
-    breakTime: 5,
-  };
+const Settings = () => {
+  const settingsIfo = useContext(SettingsContext);
+  const sessionTime = settingsIfo.sessionTime;
+  const breakTime = settingsIfo.breakTime;
+  const setSessionTime = settingsIfo.setSessionTime;
+  const setBreakTime = settingsIfo.setBreakTime;
 
-  componentDidMount() {
-    const sessionTimeLocal = localStorage.getItem("sessionTime");
-    const breakTimeLocal = localStorage.getItem("breakTime");
-    if (sessionTimeLocal && breakTimeLocal) {
-      this.setState({
-        sessionTime: sessionTimeLocal,
-        breakTime: breakTimeLocal,
-      });
-    }
-  }
-  handleShowHideSettings = () => {
-    this.setState((prevState) => ({
-      settingsIsActive: !prevState.settingsIsActive,
-    }));
-  };
-
-  timeSubtraction = (e) => {
+  const timeSubtraction = (e) => {
     if (e.target.name === "sessionTime") {
-      if (this.state.sessionTime > 0) {
-        this.setState((prevState) => ({
-          sessionTime: --prevState.sessionTime,
-        }));
+      if (sessionTime > 0) {
+        setSessionTime((sessionTime) => sessionTime - 1);
       }
     }
     if (e.target.name === "breakeTime") {
-      if (this.state.breakTime > 0) {
-        this.setState((prevState) => ({
-          breakTime: --prevState.breakTime,
-        }));
+      if (breakTime > 0) {
+        setBreakTime((breakTime) => breakTime - 1);
       }
     }
   };
-  timeAddition = (e) => {
+  const timeAddition = (e) => {
     if (e.target.name === "sessionTime") {
-      this.setState((prevState) => ({
-        sessionTime: ++prevState.sessionTime,
-      }));
+      setSessionTime((sessionTime) => sessionTime + 1);
     }
     if (e.target.name === "breakeTime") {
-      this.setState((prevState) => ({
-        breakTime: ++prevState.breakTime,
-      }));
+      setBreakTime((breakTime) => breakTime + 1);
     }
   };
 
-  timeSet = () => {
-    const sessionTime = this.state.sessionTime;
-    const breakeTime = this.state.breakTime;
-    this.props.onTimeChage(sessionTime, breakeTime);
-    this.setState({
-      settingsIsActive: !this.state.settingsIsActive,
-    });
+  const timeSetToLacal = () => {
+    settingsIfo.setSettingsIsActive(false);
+    localStorage.setItem("sessionTime", sessionTime);
+    localStorage.setItem("breakTime", breakTime);
   };
-  render() {
-    return (
-      <>
-        <div
-          style={this.state.settingsIsActive ? { left: "0" } : null}
-          className="timer-settings"
-        >
-          <label className="timer-settings_label" htmlFor="session">
-            Session timer
-          </label>
-          <button
-            onClick={this.timeSubtraction}
-            className="timer-settings_button"
-            name="sessionTime"
-          >
-            -
-          </button>
-          <input
-            className="timer-settings-input"
-            type="number"
-            id={"session"}
-            value={this.state.sessionTime}
-            readOnly
-          />
-          <button
-            onClick={this.timeAddition}
-            className="timer-settings_button"
-            name="sessionTime"
-          >
-            +
-          </button>
-          <label htmlFor="breake" className="timer-settings_label">
-            Breake timer
-          </label>
-          <button
-            onClick={this.timeSubtraction}
-            className="timer-settings_button"
-            name="breakeTime"
-          >
-            -
-          </button>
-          <input
-            className="timer-settings-input"
-            type="number"
-            id={"breake"}
-            value={this.state.breakTime}
-            readOnly
-          />
-          <button
-            onClick={this.timeAddition}
-            className="timer-settings_button"
-            name="breakeTime"
-          >
-            +
-          </button>
-          <button onClick={this.timeSet} className="timer-settings_button-set">
-            Set
-          </button>
-        </div>
+
+  return (
+    <>
+      <div className="timer-settings">
+        <label className="timer-settings_label" htmlFor="session">
+          Session timer
+        </label>
         <button
-          onClick={this.handleShowHideSettings}
-          className="timer-settings-show"
+          onClick={timeSubtraction}
+          className="timer-settings_button"
+          name="sessionTime"
         >
-          {this.state.settingsIsActive ? (
-            <FontAwesomeIcon icon={faXmark} />
-          ) : (
-            <FontAwesomeIcon icon={faGear} />
-          )}
+          -
         </button>
-      </>
-    );
-  }
-}
+        <input
+          className="timer-settings-input"
+          type="number"
+          id={"session"}
+          value={sessionTime}
+          readOnly
+        />
+        <button
+          onClick={timeAddition}
+          className="timer-settings_button"
+          name="sessionTime"
+        >
+          +
+        </button>
+        <label htmlFor="breake" className="timer-settings_label">
+          Breake timer
+        </label>
+        <button
+          onClick={timeSubtraction}
+          className="timer-settings_button"
+          name="breakeTime"
+        >
+          -
+        </button>
+        <input
+          className="timer-settings-input"
+          type="number"
+          id={"breake"}
+          value={breakTime}
+          readOnly
+        />
+        <button
+          onClick={timeAddition}
+          className="timer-settings_button"
+          name="breakeTime"
+        >
+          +
+        </button>
+        <button onClick={timeSetToLacal} className="timer-settings_button-set">
+          Set
+        </button>
+      </div>
+    </>
+  );
+};
 
 export default Settings;
