@@ -11,6 +11,7 @@
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
+  font-size: 16px;
   margin: 5px;
   padding: 10px;
   background-color: rgb(81, 133, 146);
@@ -39,4 +40,24 @@
 .emptyListMessage {
   padding: 25px 0;
   font-size: 16px;
+}
+
+.taskList_done-tasks {
+  max-height: 350px;
+  overflow: hidden;
+}
+
+.taskList_done-tasks.active {
+  max-height: 100%;
+  overflow: visible;
+}
+
+.taskList_show-more-btn {
+  font-size: 16px;
+  padding: 5px 15px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  background-color: var(--importantColor);
+  border: 1px solid var(--importantColor);
+  color: white;
 }

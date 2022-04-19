@@ -1,85 +1,85 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import AddTask from "../components/AddTask";
 import TaskList from "../components/TaskList";
 import "../styles/ToDoAppPage.css";
 
-class ToDoApp extends Component {
-  localTasks;
-  counter = 0;
-  state = {
-    tasks: [],
+const ToDoApp = () => {
+  const getLocalTasks = () => {
+    let tasksLS = localStorage.getItem("tasksList");
+    if (tasksLS) {
+      return JSON.parse(localStorage.getItem("tasksList"));
+    }
+    if (!tasksLS) {
+      localStorage.setItem("tasksList", JSON.stringify([]));
+    }
+  };
+  const getId = () => {
+    let id = localStorage.getItem("id");
+    if (id) {
+      return JSON.parse(localStorage.getItem("id"));
+    }
+    if (!id) {
+      localStorage.setItem("id", JSON.stringify(0));
+    }
   };
 
-  componentDidMount() {
-    this.localTasks = JSON.parse(localStorage.getItem("localTasksArray"));
-    if (this.localTasks) {
-      this.setState({
-        tasks: this.localTasks,
-      });
-    } else {
-      this.localTasks = localStorage.setItem(
-        "localTasksArray",
-        JSON.stringify(this.state.tasks)
-      );
-      this.setState({
-        tasks: [],
-      });
-    }
-  }
+  const [tasks, setTasks] = useState(getLocalTasks());
+  let [id, setId] = useState(getId());
+  const [classIsActive, setClassIsActive] = useState(false);
 
-  componentDidUpdate() {
-    this.localTasks = localStorage.setItem(
-      "localTasksArray",
-      JSON.stringify(this.state.tasks)
-    );
-  }
+  useEffect(() => {
+    localStorage.setItem("tasksList", JSON.stringify(tasks));
+    localStorage.setItem("id", JSON.stringify(id));
+  }, [tasks]);
 
-  addTask = (text, date, important) => {
+  const addTask = (input, important, date) => {
     const task = {
-      id: this.counter,
-      text: text,
+      id: id,
+      text: input,
       date: date,
       important: important,
       active: true,
       finishDate: null,
     };
-    this.setState({
-      tasks: [...this.state.tasks, task],
-    });
-    this.counter++;
+    const newTasks = [task, ...tasks];
+    setTasks(newTasks);
+    setId((id) => id + 1);
     return true;
   };
 
-  changeStatus = (id) => {
-    this.state.tasks.forEach((task) => {
+  const changeStatus = (id) => {
+    let newTasks = [...tasks];
+    newTasks.forEach((task) => {
       if (task.id === id) {
         task.active = false;
         task.finishDate = new Date().getTime();
       }
     });
-    this.setState({
-      tasks: this.state.tasks,
-    });
+    setTasks(newTasks);
   };
 
-  deleteTask = (id) => {
-    let tasks = [...this.state.tasks];
-    tasks = tasks.filter((task) => task.id !== id);
-    this.setState({ tasks: tasks });
+  const deleteTask = (id) => {
+    let newTasks = [...tasks];
+    newTasks = tasks.filter((task) => task.id !== id);
+    setTasks(newTasks);
   };
 
-  render() {
-    return (
-      <div className="ToDoApp">
-        <AddTask addTask={this.addTask} />
-        <TaskList
-          tasks={this.state.tasks}
-          deleteTask={this.deleteTask}
-          changeStatus={this.changeStatus}
-        />
-      </div>
-    );
-  }
-}
+  const showHideDoneTasks = () => {
+    setClassIsActive((classIsActive) => !classIsActive);
+  };
+
+  return (
+    <div className="ToDoApp">
+      <AddTask addTask={addTask} />
+      <TaskList
+        tasks={tasks}
+        changeStatus={changeStatus}
+        deleteTask={deleteTask}
+        showHideTasks={showHideDoneTasks}
+        classIsActive={classIsActive}
+      />
+    </div>
+  );
+};
 
 export default ToDoApp;
