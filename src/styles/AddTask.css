@@ -1,28 +1,30 @@
-.addTaskForm {
-  max-width: 90%;
+.add-task-form {
+  max-width: 80%;
   margin: 25px auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 10px;
   justify-content: space-evenly;
 }
-.addTaskForm__inputTask {
+.add-task-form__input-task {
   flex-basis: 100%;
   padding: 5px;
-  margin-bottom: 5px;
   font-size: 16px;
 }
-.addTaskForm__important {
-  flex-basis: 30%;
+.add-task-form__important {
+  flex-basis: 100%;
   align-self: center;
-  margin-bottom: 5px;
+  text-align: center;
+
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
 .important__label {
   font-size: 16px;
+  padding-right: 5px;
   cursor: pointer;
 }
 .important__checkbox {
@@ -53,7 +55,7 @@
   display: block;
 }
 
-.addTaskForm__date {
+.add-task-form__date {
   flex-basis: 70%;
   margin-bottom: 5px;
 }
@@ -65,11 +67,45 @@
   padding: 5px;
   font-size: 16px;
 }
-.addTaskForm__button {
+.add-task-form__button {
   font-size: 16px;
   padding: 5px 15px;
   text-transform: uppercase;
   background-color: var(--importantColor);
   border: 1px solid var(--importantColor);
   color: white;
+}
+
+/* .add-task-form__show {
+  position: relative;
+  bottom: 15px;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 70%;
+  font-size: 30px;
+  padding: 5px 40px 0 40px;
+  color: var(--importantColor);
+} */
+
+.add-task-form__show {
+  position: relative;
+  bottom: 15px;
+  background-color: var(--importantColor);
+  border: 2px solid var(--importantColor);
+  box-shadow: 0px 0px 20px 2px black;
+  border-radius: 50%;
+  font-size: 30px;
+  /* padding: 10px; */
+  width: 50px;
+  height: 50px;
+  color: black;
+}
+.add-task-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  box-shadow: 0px 0px 20px 1px black;
+  color: white;
+  width: 100%;
 }

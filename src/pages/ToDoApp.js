@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import AddTask from "../components/AddTask";
 import TaskList from "../components/TaskList";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAnglesUp,
+  faAnglesDown,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import "../styles/ToDoAppPage.css";
 
 const ToDoApp = () => {
@@ -26,6 +32,7 @@ const ToDoApp = () => {
   const [tasks, setTasks] = useState(getLocalTasks());
   let [id, setId] = useState(getId());
   const [classIsActive, setClassIsActive] = useState(false);
+  const [addTaskActive, setAddTaskActive] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("tasksList", JSON.stringify(tasks));
@@ -69,8 +76,7 @@ const ToDoApp = () => {
   };
 
   return (
-    <div className="ToDoApp">
-      <AddTask addTask={addTask} />
+    <div className="to-do-app">
       <TaskList
         tasks={tasks}
         changeStatus={changeStatus}
@@ -78,6 +84,21 @@ const ToDoApp = () => {
         showHideTasks={showHideDoneTasks}
         classIsActive={classIsActive}
       />
+      <div className="add-task-wrapper">
+        <button
+          className="add-task-form__show"
+          onClick={() =>
+            addTaskActive ? setAddTaskActive(false) : setAddTaskActive(true)
+          }
+        >
+          {addTaskActive ? (
+            <FontAwesomeIcon icon={faAnglesDown} />
+          ) : (
+            <FontAwesomeIcon icon={faPlus} />
+          )}
+        </button>
+        {addTaskActive ? <AddTask addTask={addTask} /> : null}
+      </div>
     </div>
   );
 };

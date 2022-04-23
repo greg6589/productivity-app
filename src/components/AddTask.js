@@ -20,7 +20,8 @@ const AddTask = ({ addTask }) => {
     setDate(e.target.value);
   };
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (input.length > 0) {
       const add = addTask(input, important, date);
       if (add) {
@@ -33,15 +34,15 @@ const AddTask = ({ addTask }) => {
     }
   };
   return (
-    <div className="addTaskForm">
+    <form className="add-task-form">
       <input
         type="text"
         placeholder="Task name"
-        className="addTaskForm__inputTask"
+        className="add-task-form__input-task"
         value={input}
         onChange={handleTaskName}
       />
-      <div className="addTaskForm__date">
+      <div className="add-task-form__date">
         <label className="date__label" htmlFor="date">
           Date:
         </label>
@@ -53,7 +54,7 @@ const AddTask = ({ addTask }) => {
           onChange={handleDate}
         />
       </div>
-      <div className="addTaskForm__important">
+      <div className="add-task-form__important">
         <label className="important__label" htmlFor="important">
           Priority
         </label>
@@ -65,10 +66,10 @@ const AddTask = ({ addTask }) => {
           onChange={handleCheckbox}
         />
       </div>
-      <button onClick={handleClick} className="addTaskForm__button">
+      <button onClick={handleClick} className="add-task-form__button">
         Add
       </button>
-    </div>
+    </form>
   );
 };
 
