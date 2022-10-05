@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import AddTask from "../components/AddTask";
 import TaskList from "../components/TaskList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAnglesUp,
-  faAnglesDown,
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAnglesDown, faPlus } from "@fortawesome/free-solid-svg-icons";
 import "../styles/ToDoAppPage.css";
 
 const ToDoApp = () => {
