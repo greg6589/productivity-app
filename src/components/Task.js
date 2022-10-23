@@ -5,7 +5,9 @@ import { faTrashCan, faCheck } from "@fortawesome/free-solid-svg-icons";
 import "../styles/TaskList.css";
 
 const Task = (props) => {
-  const style = { backgroundColor: "rgb(175, 94, 94)" };
+  const style = {
+    backgroundColor: "rgb(224,107,107)",
+  };
   const { text, date, id, active, important, finishDate } = props.task;
 
   if (active) {
