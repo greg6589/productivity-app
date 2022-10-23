@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/WeatherForecast.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 const WeatherForecast = ({ weatherData }) => {
   const temperature = (weatherData.main.temp - 273.15).toFixed(0);
   const minTemperature = (weatherData.main.temp_min - 273.15).toFixed(0);
@@ -11,6 +13,9 @@ const WeatherForecast = ({ weatherData }) => {
   const month = new Date().toLocaleString("default", { month: "long" });
   const weekday = new Date().toLocaleString("default", { weekday: "long" });
   const day = new Date().getDate();
+
+  let sunrise = new Date(weatherData.sys.sunrise * 1000);
+  let sunset = new Date(weatherData.sys.sunset * 1000);
 
   return (
     <>
@@ -32,6 +37,16 @@ const WeatherForecast = ({ weatherData }) => {
               {minTemperature}&deg;C | {maxTemperature}&deg;C
             </p>
             <p>humidity:{humidity}%</p>
+            <p>
+              {" "}
+              <FontAwesomeIcon icon={faArrowUp} />
+              {sunrise.toLocaleTimeString().slice(0, 5)}
+            </p>
+            <p>
+              {" "}
+              <FontAwesomeIcon icon={faArrowDown} />
+              {sunset.toLocaleTimeString().slice(0, 5)}
+            </p>
           </div>
         </div>
       </div>
