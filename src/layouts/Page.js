@@ -4,10 +4,10 @@ import ToDoApp from "../pages/ToDoApp";
 import Timer from "../pages/Timer";
 import Weather from "../pages/Weather";
 
-const Page = () => {
+const Page = ({ userName }) => {
   return (
     <Routes>
-      <Route path="/" element={<ToDoApp />}></Route>
+      <Route path="/" element={<ToDoApp userName={userName} />}></Route>
       <Route path="/timer" element={<Timer />}></Route>
       <Route path="/weather" element={<Weather />}></Route>
     </Routes>
