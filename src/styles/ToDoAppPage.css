@@ -1,8 +1,16 @@
 .to-do-app {
   margin: 0 auto;
   text-align: center;
+  width: 100vw;
+}
+@media (min-width: 768px) {
+  .to-do-app {
+    width: 70vw;
+  }
 }
 
-.to-do-app h1 {
-  font-size: 20px;
+@media (min-width: 1440px) {
+  .to-do-app {
+    width: 50vw;
+  }
 }

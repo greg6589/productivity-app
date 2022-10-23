@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import AddTask from "../components/AddTask";
 import TaskList from "../components/TaskList";
+import UserWelcome from "../components/UserWelcome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faPlus } from "@fortawesome/free-solid-svg-icons";
 import "../styles/ToDoAppPage.css";
 
-const ToDoApp = () => {
+const ToDoApp = ({ userName }) => {
   const getLocalTasks = () => {
     let tasksLS = localStorage.getItem("tasksList");
     if (tasksLS) {
@@ -33,7 +34,7 @@ const ToDoApp = () => {
   useEffect(() => {
     localStorage.setItem("tasksList", JSON.stringify(tasks));
     localStorage.setItem("id", JSON.stringify(id));
-  }, [tasks]);
+  }, [tasks, id]);
 
   const addTask = (input, important, date) => {
     const task = {
@@ -73,6 +74,7 @@ const ToDoApp = () => {
 
   return (
     <div className="to-do-app">
+      <UserWelcome userName={userName} />
       <TaskList
         tasks={tasks}
         changeStatus={changeStatus}

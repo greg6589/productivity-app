@@ -80,8 +80,8 @@ const Counter = () => {
           text={minutes + ":" + seconds}
           styles={buildStyles({
             pathColor:
-              mode === "break" ? `rgb(95, 190, 98)` : `rgb(175, 94, 94)`,
-            textColor: "black",
+              mode === "break" ? `rgb(54, 174, 58)` : `rgb(175, 94, 94)`,
+            textColor: "white",
           })}
         />
       </div>

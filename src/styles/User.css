@@ -1,0 +1,16 @@
+.user-welcome h1 {
+  margin: 30px 20px;
+  text-align: left;
+  font-size: 26px;
+  letter-spacing: 1px;
+  font-family: "Lobster", cursive;
+  font-style: italic;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .user-welcome h1 {
+    margin: 50px 20px;
+    letter-spacing: 2px;
+  }
+}

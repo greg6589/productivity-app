@@ -3,6 +3,7 @@
   margin: 0 auto;
   text-align: center;
   padding-top: 20vh;
+  color: white;
 }
 .timer_display {
   margin: 0 auto;
@@ -13,9 +14,23 @@
   width: 80px;
   margin: 25px 5px;
   background-color: transparent;
+  color: white;
   border: none;
+  cursor: pointer;
 }
 
 .CircularProgressbar .CircularProgressbar-text {
   font-size: 26px;
+}
+
+@media (min-width: 768px) {
+  .timer_display {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .timer_display {
+    width: 30%;
+  }
 }

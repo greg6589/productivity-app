@@ -6,7 +6,7 @@
   padding-bottom: 80px;
 }
 .task-list h2 {
-  padding-top: 15px;
+  padding: 10px;
   font-size: 20px;
 }
 
@@ -16,20 +16,22 @@
   justify-content: space-between;
   list-style: none;
   font-size: 16px;
+  color: black;
   margin: 5px;
   padding: 10px;
-  background-color: rgb(81, 133, 146);
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
 }
 .task__titel {
   flex-basis: 70%;
 }
 .task__title-date {
+  margin-top: 5px;
   font-style: italic;
   font-size: 14px;
   color: rgb(41, 41, 41);
 }
 .task__buttons {
-  flex-basis: 30%;
   align-self: center;
 }
 
@@ -38,20 +40,25 @@
   font-size: 26px;
   background-color: transparent;
   border-color: transparent;
-  color: rgb(71, 71, 71);
+  color: rgb(35, 35, 35);
   padding: 5px;
+  cursor: pointer;
 }
-.emptyListMessage {
-  padding: 25px 0;
-  font-size: 16px;
-  color: rgb(71, 71, 71);
-}
-
 .task-list_show-more-btn {
   font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
   padding: 5px 15px;
   text-transform: uppercase;
-  background-color: var(--importantColor);
-  border: 1px solid var(--importantColor);
-  color: white;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .task-list {
+    margin: 50px auto;
+  }
 }

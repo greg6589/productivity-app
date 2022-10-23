@@ -1,12 +1,12 @@
 :root {
-  --importantColor: rgb(175, 94, 94);
+  --importantColor: rgb(224, 107, 107);
 }
 
 .navigation {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: black;
+  background-color: rgb(14, 99, 143);
 }
 
 .navigation-item {
@@ -16,20 +16,23 @@
 .navigation-item a {
   display: block;
   padding: 10px 20px;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid transparent;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
+
   cursor: pointer;
   transition: 0.2s;
 }
 
 .navigation-item a:hover {
-  border-bottom: 3px solid var(--importantColor);
-  color: var(--importantColor);
+  border-bottom: 3px solid #05283a;
+  font-weight: bold;
+  color: #02141d;
 }
 
 a.active {
-  color: var(--importantColor);
-  border-bottom: 3px solid var(--importantColor);
+  color: #02141d;
+  font-weight: bold;
+  border-bottom: 3px solid #05283a;
 }

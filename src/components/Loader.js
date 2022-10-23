@@ -6,7 +6,7 @@ const Loader = () => {
     <>
       <div className="loader">
         <FadeLoader
-          color={"rgb(175, 94, 94)"}
+          color={"white"}
           height={20}
           size={500}
           speedMultiplier={1}

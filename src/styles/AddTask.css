@@ -11,12 +11,13 @@
   flex-basis: 100%;
   padding: 5px;
   font-size: 16px;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 5px;
 }
 .add-task-form__important {
   flex-basis: 100%;
   align-self: center;
   text-align: center;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,8 +49,8 @@
   display: none;
 }
 .important__checkbox:checked {
-  background-color: var(--importantColor);
-  border: 1px solid var(--importantColor);
+  background-color: rgb(224, 107, 107);
+  border: 1px solid rgb(224, 107, 107);
 }
 .important__checkbox:checked:after {
   display: block;
@@ -66,45 +67,40 @@
 .date__input {
   padding: 5px;
   font-size: 16px;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 5px;
+  cursor: pointer;
 }
 .add-task-form__button {
   font-size: 16px;
+  font-weight: bold;
   padding: 5px 15px;
   text-transform: uppercase;
-  background-color: var(--importantColor);
-  border: 1px solid var(--importantColor);
-  color: white;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
 }
-
-/* .add-task-form__show {
-  position: relative;
-  bottom: 15px;
-  background-color: black;
-  border: 1px solid black;
-  border-radius: 70%;
-  font-size: 30px;
-  padding: 5px 40px 0 40px;
-  color: var(--importantColor);
-} */
 
 .add-task-form__show {
   position: relative;
   bottom: 15px;
-  background-color: var(--importantColor);
-  border: 2px solid var(--importantColor);
-  box-shadow: 0px 0px 20px 2px black;
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(240, 240, 240);
+  box-shadow: 0px 0px 15px 1px black;
   border-radius: 50%;
   font-size: 30px;
-  /* padding: 10px; */
   width: 50px;
   height: 50px;
   color: black;
+  cursor: pointer;
 }
 .add-task-wrapper {
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: black;
+  background-color: #0e638f;
   box-shadow: 0px 0px 20px 1px black;
   color: white;
   width: 100%;

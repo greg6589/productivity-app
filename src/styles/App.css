@@ -6,8 +6,9 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: rgb(46, 134, 178);
+  color: white;
 }
 .App {
   min-height: 100vh;
-  background-color: rgb(170, 170, 170);
 }
