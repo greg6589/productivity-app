@@ -60,31 +60,38 @@ const TaskList = (props) => {
 
   return (
     <>
-      <div className="task-list">
-        <h2>
-          Tasks to do: <span>{active.length}</span>
-        </h2>
-        <ul>
-          {active.length > 0 ? (
-            activeTasks
-          ) : (
-            <h3 className="emptyListMessage">No more tasks to be done!</h3>
+      <div className="task-list-container">
+        <div className="task-list">
+          <h2>
+            You have{" "}
+            <span>
+              {active.length}
+              {active.length === 1 ? " task " : " tasks "}
+              to be done!
+            </span>
+          </h2>
+          <ul>{activeTasks}</ul>
+        </div>
+        <div className="task-list done">
+          {done.length === 0 ? null : (
+            <h2>
+              You have done{" "}
+              <span>
+                {done.length} {done.length < 2 ? "task" : "tasks"}
+              </span>
+            </h2>
           )}
-        </ul>
-      </div>
-      <div className="task-list done">
-        <h2>
-          Done: <span>{done.length}</span>
-        </h2>
-        <ul>{props.classIsActive ? doneTasks : doneTasksLast5}</ul>
-        {done.length > 5 && (
-          <button
-            onClick={props.showHideTasks}
-            className={"task-list_show-more-btn"}
-          >
-            {props.classIsActive ? "show less" : "show more"}
-          </button>
-        )}
+
+          <ul>{props.classIsActive ? doneTasks : doneTasksLast5}</ul>
+          {done.length > 5 && (
+            <button
+              onClick={props.showHideTasks}
+              className={"task-list_show-more-btn"}
+            >
+              {props.classIsActive ? "show less" : "show more"}
+            </button>
+          )}
+        </div>
       </div>
     </>
   );
