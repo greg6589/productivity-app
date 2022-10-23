@@ -5,6 +5,7 @@ import "../styles/TaskList.css";
 const TaskList = (props) => {
   const active = props.tasks.filter((task) => task.active);
   const done = props.tasks.filter((task) => !task.active);
+
   const doneLast5 = done.slice(0, 5);
 
   if (done.length >= 2) {
@@ -78,7 +79,8 @@ const TaskList = (props) => {
               You have done{" "}
               <span>
                 {done.length} {done.length < 2 ? "task" : "tasks"}
-              </span>
+              </span>{" "}
+              today!
             </h2>
           )}
 

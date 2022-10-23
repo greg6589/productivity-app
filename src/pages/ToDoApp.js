@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import AddTask from "../components/AddTask";
 import TaskList from "../components/TaskList";
 import UserWelcome from "../components/UserWelcome";
@@ -30,11 +30,24 @@ const ToDoApp = ({ userName }) => {
   let [id, setId] = useState(getId());
   const [classIsActive, setClassIsActive] = useState(false);
   const [addTaskActive, setAddTaskActive] = useState(false);
+  const didMount = useDidMount();
+
+  function useDidMount() {
+    const didMountRef = useRef(true);
+    useEffect(() => {
+      didMountRef.current = false;
+    }, []);
+    return didMountRef.current;
+  }
 
   useEffect(() => {
+    if (didMount) {
+      console.log("mounted");
+      deleteOldTask();
+    }
     localStorage.setItem("tasksList", JSON.stringify(tasks));
     localStorage.setItem("id", JSON.stringify(id));
-  }, [tasks, id]);
+  }, [tasks, id, didMount]);
 
   const addTask = (input, important, date) => {
     const task = {
@@ -66,6 +79,16 @@ const ToDoApp = ({ userName }) => {
     let newTasks = [...tasks];
     newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
+  };
+  const deleteOldTask = () => {
+    let todayFinishedTasks = [...tasks];
+    let activeTasks = [...tasks];
+    todayFinishedTasks = tasks.filter(
+      (task) =>
+        new Date(task.finishDate).toDateString() === new Date().toDateString()
+    );
+    activeTasks = tasks.filter((task) => task.active);
+    setTasks(activeTasks.concat(todayFinishedTasks));
   };
 
   const showHideDoneTasks = () => {
