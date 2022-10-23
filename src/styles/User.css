@@ -8,6 +8,38 @@
   color: white;
 }
 
+.user-title {
+  margin: 100px 0 50px 0;
+  text-align: center;
+}
+.user-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 25px;
+}
+
+.user-form__input {
+  flex-basis: 30%;
+  margin: 0 auto;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 5px;
+}
+.user-form__button {
+  margin: 0 auto;
+  padding: 5px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .user-welcome h1 {
     margin: 50px 20px;

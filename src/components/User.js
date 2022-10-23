@@ -27,16 +27,16 @@ const User = () => {
 
   return (
     <>
-      <h1>Welcome! Enter your name Please.</h1>
-      <form>
+      <h1 className="user-title">Welcome! Enter your name Please.</h1>
+      <form className="user-form">
         <input
           type="text"
-          placeholder="Task name"
-          className="add-task-form__input-task"
+          placeholder="Your name"
+          className="user-form__input"
           value={userNameInput}
           onChange={handleUserName}
         />
-        <button className="add-task-form__button" onClick={handleClick}>
+        <button className="user-form__button" onClick={handleClick}>
           Save
         </button>
       </form>

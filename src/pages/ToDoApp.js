@@ -42,7 +42,6 @@ const ToDoApp = ({ userName }) => {
 
   useEffect(() => {
     if (didMount) {
-      console.log("mounted");
       deleteOldTask();
     }
     localStorage.setItem("tasksList", JSON.stringify(tasks));
