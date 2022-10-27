@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/AddTask.css";
+import "../AddTask/AddTask.css";
 
 const AddTask = ({ addTask }) => {
   const minDate = new Date().toISOString().slice(0, 10);

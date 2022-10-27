@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
-import SettingsContext from "./SettingsContext";
+import SettingsContext from "../../Context/SettingsContext";
 
-import "../styles/Settings.css";
+import "./Settings.css";
 
 const Settings = () => {
   const settingsIfo = useContext(SettingsContext);

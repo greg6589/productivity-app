@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import WeatherForecast from "../components/WeatherForecast";
-import Loader from "../components/Loader";
+import WeatherForecast from "../components/WeatherForecast/WeatherForecast";
+import Loader from "../components/Loader/Loader";
 
 const Weather = () => {
   const [lat, setLat] = useState([]);

@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 
-import UserContext from "./SettingsContext";
+import UserContext from "../Context/SettingsContext";
 
-import "../styles/User.css";
+import "./User.css";
 
 const User = () => {
   const [userNameInput, setUserNameInput] = useState("");

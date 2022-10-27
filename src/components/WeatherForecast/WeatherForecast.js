@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
-import "../styles/WeatherForecast.css";
+import "./WeatherForecast.css";
 
 const WeatherForecast = ({ weatherData }) => {
   const temperature = (weatherData.main.temp - 273.15).toFixed(0);

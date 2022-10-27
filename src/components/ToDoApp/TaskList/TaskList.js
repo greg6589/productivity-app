@@ -1,8 +1,8 @@
 import React from "react";
 
-import Task from "../components/Task";
+import Task from "../Task/Task";
 
-import "../styles/TaskList.css";
+import "../TaskList/TaskList.css";
 
 const TaskList = (props) => {
   const active = props.tasks.filter((task) => task.active);

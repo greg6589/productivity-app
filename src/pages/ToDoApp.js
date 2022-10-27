@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import AddTask from "../components/AddTask";
-import TaskList from "../components/TaskList";
-import UserWelcome from "../components/UserWelcome";
+import AddTask from "../components/ToDoApp/AddTask/AddTask";
+import TaskList from "../components/ToDoApp/TaskList/TaskList";
+import UserWelcome from "../components/ToDoApp/UserWelcome/UserWelcome";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faPlus } from "@fortawesome/free-solid-svg-icons";

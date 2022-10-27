@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faCheck } from "@fortawesome/free-solid-svg-icons";
 
-import "../styles/TaskList.css";
+// import "./TaskList.css";
 
 const Task = (props) => {
   const style = {

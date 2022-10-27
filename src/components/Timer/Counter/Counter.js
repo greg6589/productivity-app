@@ -2,10 +2,10 @@ import React, { useState, useContext, useEffect, useRef } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import useSound from "use-sound";
 
-import SettingsContext from "./SettingsContext";
-import StartButton from "../components/StartButton";
-import StopButton from "../components/StopButton";
-import sound from "../sound/sound.wav";
+import SettingsContext from "../../Context/SettingsContext";
+import StartButton from "../Button/StartButton";
+import StopButton from "../Button/StopButton";
+import sound from "../../../sound/sound.wav";
 
 import "react-circular-progressbar/dist/styles.css";
 

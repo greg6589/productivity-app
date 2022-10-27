@@ -3,8 +3,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import Navigation from "../layouts/Navigation";
 import Page from "../layouts/Page";
-import User from "../components/User";
-import UserContext from "../components/SettingsContext";
+import User from "../components/User/User";
+import UserContext from "../components/Context/SettingsContext";
 
 import "../styles/App.css";
 

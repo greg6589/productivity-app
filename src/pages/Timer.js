@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import Counter from "../components/Counter";
-import SetingsContext from "../components/SettingsContext";
-import Settings from "../components/Settings";
+import Counter from "../components/Timer/Counter/Counter";
+import SetingsContext from "../components/Context/SettingsContext";
+import Settings from "../components/Timer/Settings/Settings";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear, faXmark } from "@fortawesome/free-solid-svg-icons";
