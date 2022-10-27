@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "../AddTask/AddTask.css";
+import styles from "../AddTask/AddTask.module.css";
 
+import "../AddTask/AddTask.module.css";
 const AddTask = ({ addTask }) => {
   const minDate = new Date().toISOString().slice(0, 10);
 
@@ -35,39 +36,39 @@ const AddTask = ({ addTask }) => {
   };
 
   return (
-    <form className="add-task-form">
+    <form className={styles.add_task_form}>
       <input
         type="text"
         placeholder="Task name"
-        className="add-task-form__input-task"
+        className={styles.add_task_form__input_task}
         value={input}
         onChange={handleTaskName}
       />
-      <div className="add-task-form__date">
-        <label className="date__label" htmlFor="date">
+      <div className={styles.add_task_form__date}>
+        <label className={styles.date__label} htmlFor="date">
           Date:
         </label>
         <input
           type="date"
-          className="date__input"
+          className={styles.date__input}
           value={date}
           min={minDate}
           onChange={handleDate}
         />
       </div>
-      <div className="add-task-form__important">
-        <label className="important__label" htmlFor="important">
+      <div className={styles.add_task_form__important}>
+        <label className={styles.important__label} htmlFor="important">
           Priority
         </label>
         <input
           type="checkbox"
           checked={important}
           id={"important"}
-          className="important__checkbox"
+          className={styles.important__checkbox}
           onChange={handleCheckbox}
         />
       </div>
-      <button onClick={handleClick} className="add-task-form__button">
+      <button onClick={handleClick} className={styles.add_task_form__button}>
         Add
       </button>
     </form>

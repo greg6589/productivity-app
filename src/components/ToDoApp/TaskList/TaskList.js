@@ -2,7 +2,7 @@ import React from "react";
 
 import Task from "../Task/Task";
 
-import "../TaskList/TaskList.css";
+import styles from "../TaskList/TaskList.module.css";
 
 const TaskList = (props) => {
   const active = props.tasks.filter((task) => task.active);
@@ -64,8 +64,8 @@ const TaskList = (props) => {
 
   return (
     <>
-      <div className="task-list-container">
-        <div className="task-list">
+      <div className={styles.task_list_container}>
+        <div className={styles.task_list}>
           <h2>
             You have{" "}
             <span>
@@ -76,7 +76,7 @@ const TaskList = (props) => {
           </h2>
           <ul>{activeTasks}</ul>
         </div>
-        <div className="task-list done">
+        <div className={styles.task_list_done}>
           {done.length === 0 ? null : (
             <h2>
               You have done{" "}
@@ -91,7 +91,7 @@ const TaskList = (props) => {
           {done.length > 5 && (
             <button
               onClick={props.showHideTasks}
-              className={"task-list_show-more-btn"}
+              className={styles.task_list__show_more_btn}
             >
               {props.classIsActive ? "show less" : "show more"}
             </button>

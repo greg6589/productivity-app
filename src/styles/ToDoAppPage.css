@@ -3,6 +3,28 @@
   text-align: center;
   width: 100vw;
 }
+.add-task-form__show {
+  position: relative;
+  bottom: 15px;
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(240, 240, 240);
+  box-shadow: 0px 0px 15px 1px black;
+  border-radius: 50%;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  color: black;
+  cursor: pointer;
+}
+.add-task-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #0e638f;
+  box-shadow: 0px 0px 20px 1px black;
+  color: white;
+  width: 100%;
+}
 @media (min-width: 768px) {
   .to-do-app {
     width: 70vw;

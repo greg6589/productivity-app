@@ -1,0 +1,33 @@
+.task_list,
+.task_list_done {
+  margin: 0 auto;
+}
+
+.task_list_done {
+  padding-bottom: 80px;
+}
+.task_list h2,
+.task_list_done h2 {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.task_list__show_more_btn {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .task_list,
+  .task_list_done {
+    margin: 50px auto;
+  }
+}
