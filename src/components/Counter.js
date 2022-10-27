@@ -1,10 +1,12 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import useSound from "use-sound";
-import sound from "../sound/sound.wav";
+
 import SettingsContext from "./SettingsContext";
 import StartButton from "../components/StartButton";
 import StopButton from "../components/StopButton";
+import sound from "../sound/sound.wav";
+
 import "react-circular-progressbar/dist/styles.css";
 
 const Counter = () => {

@@ -33,6 +33,7 @@ const AddTask = ({ addTask }) => {
       alert("Please enter the task name.");
     }
   };
+
   return (
     <form className="add-task-form">
       <input

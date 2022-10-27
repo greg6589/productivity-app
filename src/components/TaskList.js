@@ -1,11 +1,12 @@
 import React from "react";
+
 import Task from "../components/Task";
+
 import "../styles/TaskList.css";
 
 const TaskList = (props) => {
   const active = props.tasks.filter((task) => task.active);
   const done = props.tasks.filter((task) => !task.active);
-
   const doneLast5 = done.slice(0, 5);
 
   if (done.length >= 2) {
@@ -19,6 +20,7 @@ const TaskList = (props) => {
       return 0;
     });
   }
+
   if (doneLast5.length >= 2) {
     doneLast5.sort((a, b) => {
       if (a.finishDate < b.finishDate) {
@@ -30,6 +32,7 @@ const TaskList = (props) => {
       return 0;
     });
   }
+
   if (active.length >= 2) {
     active.sort((a, b) => {
       if (a.date > b.date) {

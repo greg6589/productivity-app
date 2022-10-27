@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import "../styles/App.css";
+
 import Navigation from "../layouts/Navigation";
 import Page from "../layouts/Page";
 import User from "../components/User";
 import UserContext from "../components/SettingsContext";
+
+import "../styles/App.css";
 
 const App = () => {
   const [userLogged, setUserLogged] = useState(false);

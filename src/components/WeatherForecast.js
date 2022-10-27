@@ -1,7 +1,10 @@
 import React from "react";
-import "../styles/WeatherForecast.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+
+import "../styles/WeatherForecast.css";
+
 const WeatherForecast = ({ weatherData }) => {
   const temperature = (weatherData.main.temp - 273.15).toFixed(0);
   const minTemperature = (weatherData.main.temp_min - 273.15).toFixed(0);

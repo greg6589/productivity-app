@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+
 import Counter from "../components/Counter";
 import SetingsContext from "../components/SettingsContext";
 import Settings from "../components/Settings";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear, faXmark } from "@fortawesome/free-solid-svg-icons";
+
 import "../styles/Timer.css";
 
 const Timer = () => {

@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+
 import AddTask from "../components/AddTask";
 import TaskList from "../components/TaskList";
 import UserWelcome from "../components/UserWelcome";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faPlus } from "@fortawesome/free-solid-svg-icons";
+
 import "../styles/ToDoAppPage.css";
 
 const ToDoApp = ({ userName }) => {

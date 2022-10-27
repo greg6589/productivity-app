@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import WeatherForecast from "../components/WeatherForecast";
 import Loader from "../components/Loader";
 
@@ -10,6 +11,7 @@ const Weather = () => {
 
   const APIKEY = "d670abfa8c3544a5e467a5f45f918f03";
   const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${APIKEY}`;
+
   const fetchData = async () => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setLat(position.coords.latitude);
