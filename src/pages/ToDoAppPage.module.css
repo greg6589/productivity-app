@@ -1,9 +1,9 @@
-.to-do-app {
+.to_do_app {
   margin: 0 auto;
   text-align: center;
   width: 100vw;
 }
-.add-task-form__show {
+.add_task_form__show {
   position: relative;
   bottom: 15px;
   background-color: rgb(240, 240, 240);
@@ -16,7 +16,7 @@
   color: black;
   cursor: pointer;
 }
-.add-task-wrapper {
+.add_task_wrapper {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -26,13 +26,13 @@
   width: 100%;
 }
 @media (min-width: 768px) {
-  .to-do-app {
+  .to_do_app {
     width: 70vw;
   }
 }
 
 @media (min-width: 1440px) {
-  .to-do-app {
+  .to_do_app {
     width: 50vw;
   }
 }

@@ -7,7 +7,7 @@ import UserWelcome from "../components/ToDoApp/UserWelcome/UserWelcome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-import "../styles/ToDoAppPage.css";
+import style from "./ToDoAppPage.module.css";
 
 const ToDoApp = ({ userName }) => {
   const getLocalTasks = () => {
@@ -98,7 +98,7 @@ const ToDoApp = ({ userName }) => {
   };
 
   return (
-    <div className="to-do-app">
+    <div className={style.to_do_app}>
       <UserWelcome userName={userName} />
       <TaskList
         tasks={tasks}
@@ -107,9 +107,9 @@ const ToDoApp = ({ userName }) => {
         showHideTasks={showHideDoneTasks}
         classIsActive={classIsActive}
       />
-      <div className="add-task-wrapper">
+      <div className={style.add_task_wrapper}>
         <button
-          className="add-task-form__show"
+          className={style.add_task_form__show}
           onClick={() =>
             addTaskActive ? setAddTaskActive(false) : setAddTaskActive(true)
           }
