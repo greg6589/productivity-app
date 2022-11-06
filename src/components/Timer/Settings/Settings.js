@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import SettingsContext from "../../Context/SettingsContext";
 
-import "./Settings.css";
+import styles from "./Settings.module.css";
 
 const Settings = () => {
   const settingsIfo = useContext(SettingsContext);
@@ -40,19 +40,19 @@ const Settings = () => {
 
   return (
     <>
-      <div className="timer-settings">
-        <label className="timer-settings_label" htmlFor="session">
+      <div className={styles.timer_settings}>
+        <label className={styles.timer_settings_label} htmlFor="session">
           Session timer
         </label>
         <button
           onClick={timeSubtraction}
-          className="timer-settings_button"
+          className={styles.timer_settings_button}
           name="sessionTime"
         >
           -
         </button>
         <input
-          className="timer-settings-input"
+          className={styles.timer_settings_input}
           type="number"
           id={"session"}
           value={sessionTime}
@@ -60,23 +60,23 @@ const Settings = () => {
         />
         <button
           onClick={timeAddition}
-          className="timer-settings_button"
+          className={styles.timer_settings_button}
           name="sessionTime"
         >
           +
         </button>
-        <label htmlFor="breake" className="timer-settings_label">
+        <label htmlFor="breake" className={styles.timer_settings_label}>
           Breake timer
         </label>
         <button
           onClick={timeSubtraction}
-          className="timer-settings_button"
+          className={styles.timer_settings_button}
           name="breakeTime"
         >
           -
         </button>
         <input
-          className="timer-settings-input"
+          className={styles.timer_settings_input}
           type="number"
           id={"breake"}
           value={breakTime}
@@ -84,12 +84,15 @@ const Settings = () => {
         />
         <button
           onClick={timeAddition}
-          className="timer-settings_button"
+          className={styles.timer_settings_button}
           name="breakeTime"
         >
           +
         </button>
-        <button onClick={timeSetToLacal} className="timer-settings_button-set">
+        <button
+          onClick={timeSetToLacal}
+          className={styles.timer_settings_button_set}
+        >
           Set
         </button>
       </div>

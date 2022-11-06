@@ -1,15 +1,15 @@
-.timer-settings {
+.timer_settings {
   padding-top: 10vh;
   text-align: center;
 }
-.timer-settings_label {
+.timer_settings_label {
   display: block;
   width: 100%;
   margin: 0 auto;
   font-size: 20px;
   padding: 50px 0 10px 0;
 }
-.timer-settings-input {
+.timer_settings_input {
   width: 60px;
   height: 40px;
   font-size: 20px;
@@ -17,7 +17,7 @@
   cursor: initial;
 }
 
-.timer-settings_button {
+.timer_settings_button {
   font-size: 20px;
   width: 40px;
   height: 40px;
@@ -26,7 +26,7 @@
   border: 2px solid rgb(101, 101, 101);
   cursor: pointer;
 }
-.timer-settings_button-set {
+.timer_settings_button_set {
   display: block;
   width: 80px;
   margin: 50px auto;
@@ -39,7 +39,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.timer-settings-show {
+.timer_settings_show {
   position: absolute;
   top: 50px;
   right: 10px;
