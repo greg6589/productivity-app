@@ -84,7 +84,7 @@
 }
 
 @media (min-width: 768px) {
-  .add-task-form__input-task {
+  .add_task_form__input_task {
     flex-basis: 70%;
   }
 }
