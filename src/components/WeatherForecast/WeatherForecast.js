@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
-import "./WeatherForecast.css";
+import style from "./WeatherForecast.module.css";
 
 const WeatherForecast = ({ weatherData }) => {
   const temperature = (weatherData.main.temp - 273.15).toFixed(0);
@@ -22,12 +22,12 @@ const WeatherForecast = ({ weatherData }) => {
 
   return (
     <>
-      <div className="weather">
-        <div className="weather-container">
+      <div className={style.weather}>
+        <div className={style.weather_container}>
           <h1>{weatherData.name}</h1>
-          <p className="weather-date">
-            <span className="capitalize">{weekday}</span>, {day}{" "}
-            <span className="capitalize">{month}</span> {year}
+          <p className={style.weather_date}>
+            <span className={style.capitalize}>{weekday}</span>, {day}{" "}
+            <span className={style.capitalize}>{month}</span> {year}
           </p>
           <h2>{temperature}&deg;C</h2>
           <img
@@ -35,7 +35,7 @@ const WeatherForecast = ({ weatherData }) => {
             alt="icon"
           />
           <p>{weather}</p>
-          <div className="weather-details">
+          <div className={style.weather_details}>
             <p>
               {minTemperature}&deg;C | {maxTemperature}&deg;C
             </p>
