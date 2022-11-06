@@ -3,8 +3,8 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import useSound from "use-sound";
 
 import SettingsContext from "../../Context/SettingsContext";
-import StartButton from "../Button/StartButton";
-import StopButton from "../Button/StopButton";
+import StartButton from "../Buttons/StartButton";
+import StopButton from "../Buttons/StopButton";
 import sound from "../../../sound/sound.wav";
 
 import "react-circular-progressbar/dist/styles.css";
