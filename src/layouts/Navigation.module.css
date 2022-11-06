@@ -9,23 +9,22 @@
   background-color: rgb(14, 99, 143);
 }
 
-.navigation-item {
+.navigation_item {
   list-style: none;
 }
 
-.navigation-item a {
+.navigation_item a {
   display: block;
   padding: 10px 20px;
   border-bottom: 3px solid transparent;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
-
   cursor: pointer;
   transition: 0.2s;
 }
 
-.navigation-item a:hover {
+.navigation_item a:hover {
   border-bottom: 3px solid #05283a;
   font-weight: bold;
   color: #02141d;

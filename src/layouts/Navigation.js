@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import "../styles/Navigation.css";
+import style from "./Navigation.module.css";
 
 const navList = [
   { name: "ToDoApp", path: "/" },
@@ -11,11 +11,11 @@ const navList = [
 
 const Navigation = () => {
   const menu = navList.map((item) => (
-    <li className="navigation-item" key={item.name}>
+    <li className={style.navigation_item} key={item.name}>
       <NavLink to={item.path}>{item.name}</NavLink>
     </li>
   ));
-  return <ul className="navigation">{menu}</ul>;
+  return <ul className={style.navigation}>{menu}</ul>;
 };
 
 export default Navigation;
