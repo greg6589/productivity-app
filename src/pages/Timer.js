@@ -7,7 +7,7 @@ import Settings from "../components/Timer/Settings/Settings";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-import "../styles/Timer.css";
+import styles from "../pages/Timer.module.css";
 
 const Timer = () => {
   const [settingsIsActive, setSettingsIsActive] = useState(false);
@@ -33,7 +33,7 @@ const Timer = () => {
             ? setSettingsIsActive(false)
             : setSettingsIsActive(true)
         }
-        className="timer-settings-show"
+        className={styles.timer_settings_show}
       >
         {settingsIsActive ? (
           <FontAwesomeIcon icon={faXmark} />

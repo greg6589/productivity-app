@@ -1,10 +1,12 @@
 import React from "react";
 
+import styles from "./Button.module.css";
+
 const StartButton = ({ setSessionActive }) => {
   return (
     <button
       onClick={() => setSessionActive(true)}
-      className="timer_button start"
+      className={styles.timer_button}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

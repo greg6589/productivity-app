@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./Button.module.css";
+
 const StopButton = ({ setSessionActive, setMode }) => {
   return (
     <button
@@ -7,7 +9,7 @@ const StopButton = ({ setSessionActive, setMode }) => {
         setSessionActive(false);
         setMode("work");
       }}
-      className="timer_button"
+      className={styles.timer_button}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

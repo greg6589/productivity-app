@@ -8,6 +8,7 @@ import StopButton from "../Button/StopButton";
 import sound from "../../../sound/sound.wav";
 
 import "react-circular-progressbar/dist/styles.css";
+import styles from "./Counter.module.css";
 
 const Counter = () => {
   const [sessionActive, setSessionActive] = useState(false);
@@ -75,8 +76,8 @@ const Counter = () => {
   }
 
   return (
-    <div className="timer">
-      <div className="timer_display">
+    <div className={styles.timer}>
+      <div className={styles.timer_display}>
         <CircularProgressbar
           value={percentage}
           text={minutes + ":" + seconds}
