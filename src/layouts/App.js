@@ -6,7 +6,7 @@ import Page from "../layouts/Page";
 import User from "../components/User/User";
 import UserContext from "../components/Context/SettingsContext";
 
-import "../styles/App.css";
+import style from "./App.module.css";
 
 const App = () => {
   const [userLogged, setUserLogged] = useState(false);
@@ -27,7 +27,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className={style.App}>
       <Router>
         <nav>{<Navigation />}</nav>
         <UserContext.Provider
