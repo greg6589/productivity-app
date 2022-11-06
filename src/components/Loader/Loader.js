@@ -1,11 +1,12 @@
 import React from "react";
 
 import FadeLoader from "react-spinners/FadeLoader";
+import style from "./Loader.module.css";
 
 const Loader = () => {
   return (
     <>
-      <div className="loader">
+      <div className={style.loader}>
         <FadeLoader
           color={"white"}
           height={20}
