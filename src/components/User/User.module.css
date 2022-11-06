@@ -1,25 +1,15 @@
-.user-welcome h1 {
-  margin: 30px 20px;
-  text-align: left;
-  font-size: 26px;
-  letter-spacing: 1px;
-  font-family: "Lobster", cursive;
-  font-style: italic;
-  color: white;
-}
-
-.user-title {
+.user_title {
   margin: 100px 0 50px 0;
   text-align: center;
 }
-.user-form {
+.user_form {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 25px;
 }
 
-.user-form__input {
+.user_form__input {
   flex-basis: 30%;
   margin: 0 auto;
   padding: 5px;
@@ -27,7 +17,7 @@
   border-radius: 5px;
   border: 1px solid rgb(240, 240, 240);
 }
-.user-form__button {
+.user_form__button {
   margin: 0 auto;
   padding: 5px 15px;
   font-size: 16px;
@@ -41,7 +31,7 @@
 }
 
 @media (min-width: 768px) {
-  .user-welcome h1 {
+  .user_welcome h1 {
     margin: 50px 20px;
     letter-spacing: 2px;
   }

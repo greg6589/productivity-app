@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 
 import UserContext from "../Context/SettingsContext";
 
-import "./User.css";
+import style from "./User.module.css";
 
 const User = () => {
   const [userNameInput, setUserNameInput] = useState("");
@@ -29,16 +29,16 @@ const User = () => {
 
   return (
     <>
-      <h1 className="user-title">Welcome! Enter your name Please.</h1>
-      <form className="user-form">
+      <h1 className={style.user_title}>Welcome! Enter your name Please.</h1>
+      <form className={style.user_form}>
         <input
           type="text"
           placeholder="Your name"
-          className="user-form__input"
+          className={style.user_form__input}
           value={userNameInput}
           onChange={handleUserName}
         />
-        <button className="user-form__button" onClick={handleClick}>
+        <button className={style.user_form__button} onClick={handleClick}>
           Save
         </button>
       </form>
