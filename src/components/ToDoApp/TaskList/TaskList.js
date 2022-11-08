@@ -1,6 +1,7 @@
 import React from "react";
 
 import Task from "../Task/Task";
+import Button from "../../Button/Button";
 
 import styles from "../TaskList/TaskList.module.css";
 
@@ -89,12 +90,17 @@ const TaskList = (props) => {
 
           <ul>{props.classIsActive ? doneTasks : doneTasksLast5}</ul>
           {done.length > 5 && (
-            <button
-              onClick={props.showHideTasks}
+            <Button
+              handleClick={props.showHideTasks}
               className={styles.task_list__show_more_btn}
-            >
-              {props.classIsActive ? "show less" : "show more"}
-            </button>
+              content={props.classIsActive ? "show less" : "show more"}
+            />
+            // <button
+            //   onClick={props.showHideTasks}
+            //   className={styles.task_list__show_more_btn}
+            // >
+            //   {props.classIsActive ? "show less" : "show more"}
+            // </button>
           )}
         </div>
       </div>

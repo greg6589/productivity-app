@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import AddTask from "../components/ToDoApp/AddTask/AddTask";
 import TaskList from "../components/ToDoApp/TaskList/TaskList";
 import UserWelcome from "../components/ToDoApp/UserWelcome/UserWelcome";
+import Button from "../components/Button/Button";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -108,7 +109,20 @@ const ToDoApp = ({ userName }) => {
         classIsActive={classIsActive}
       />
       <div className={style.add_task_wrapper}>
-        <button
+        <Button
+          handleClick={() => {
+            addTaskActive ? setAddTaskActive(false) : setAddTaskActive(true);
+          }}
+          className={style.add_task_form__show}
+          content={
+            addTaskActive ? (
+              <FontAwesomeIcon icon={faAnglesDown} />
+            ) : (
+              <FontAwesomeIcon icon={faPlus} />
+            )
+          }
+        />
+        {/* <button
           className={style.add_task_form__show}
           onClick={() =>
             addTaskActive ? setAddTaskActive(false) : setAddTaskActive(true)
@@ -119,7 +133,7 @@ const ToDoApp = ({ userName }) => {
           ) : (
             <FontAwesomeIcon icon={faPlus} />
           )}
-        </button>
+        </button> */}
         {addTaskActive ? <AddTask addTask={addTask} /> : null}
       </div>
     </div>

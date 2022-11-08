@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "../../Input/Input";
+import Button from "../../Button/Button";
 import styles from "../AddTask/AddTask.module.css";
 
 import "../AddTask/AddTask.module.css";
@@ -68,9 +69,14 @@ const AddTask = ({ addTask }) => {
           onChange={handleCheckbox}
         />
       </div>
-      <button onClick={handleClick} className={styles.add_task_form__button}>
+      <Button
+        handleClick={handleClick}
+        className={styles.add_task_form__button}
+        content={"Add"}
+      />
+      {/* <button onClick={handleClick} className={styles.add_task_form__button}>
         Add
-      </button>
+      </button> */}
     </form>
   );
 };
