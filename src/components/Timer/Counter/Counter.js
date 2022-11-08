@@ -2,10 +2,9 @@ import React, { useState, useContext, useEffect, useRef } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import useSound from "use-sound";
 
-import SettingsContext from "../../Context/SettingsContext";
-import StartButton from "../Buttons/StartButton";
-import StopButton from "../Buttons/StopButton";
 import sound from "../../../sound/sound.wav";
+import SettingsContext from "../../Context/SettingsContext";
+import Button from "../../Button/Button";
 
 import "react-circular-progressbar/dist/styles.css";
 import styles from "./Counter.module.css";
@@ -75,6 +74,17 @@ const Counter = () => {
     seconds = "0" + seconds;
   }
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (!sessionActive) {
+      setSessionActive(true);
+    }
+    if (sessionActive) {
+      setSessionActive(false);
+      setMode("work");
+    }
+  };
+
   return (
     <div className={styles.timer}>
       <div className={styles.timer_display}>
@@ -88,14 +98,39 @@ const Counter = () => {
           })}
         />
       </div>
-      {sessionActive ? (
-        <StopButton setSessionActive={setSessionActive} setMode={setMode} />
-      ) : (
-        <StartButton
-          setSessionActive={setSessionActive}
-          sessionActive={sessionActive}
-        />
-      )}
+      <Button
+        handleClick={handleClick}
+        className={styles.timer_button}
+        content={
+          sessionActive ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"
+                clipRule="evenodd"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                clipRule="evenodd"
+              />
+            </svg>
+          )
+        }
+      />
     </div>
   );
 };
