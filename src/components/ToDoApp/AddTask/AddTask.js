@@ -74,9 +74,6 @@ const AddTask = ({ addTask }) => {
         className={styles.add_task_form__button}
         content={"Add"}
       />
-      {/* <button onClick={handleClick} className={styles.add_task_form__button}>
-        Add
-      </button> */}
     </form>
   );
 };

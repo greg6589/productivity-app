@@ -95,12 +95,6 @@ const TaskList = (props) => {
               className={styles.task_list__show_more_btn}
               content={props.classIsActive ? "show less" : "show more"}
             />
-            // <button
-            //   onClick={props.showHideTasks}
-            //   className={styles.task_list__show_more_btn}
-            // >
-            //   {props.classIsActive ? "show less" : "show more"}
-            // </button>
           )}
         </div>
       </div>

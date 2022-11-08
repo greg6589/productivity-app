@@ -122,18 +122,6 @@ const ToDoApp = ({ userName }) => {
             )
           }
         />
-        {/* <button
-          className={style.add_task_form__show}
-          onClick={() =>
-            addTaskActive ? setAddTaskActive(false) : setAddTaskActive(true)
-          }
-        >
-          {addTaskActive ? (
-            <FontAwesomeIcon icon={faAnglesDown} />
-          ) : (
-            <FontAwesomeIcon icon={faPlus} />
-          )}
-        </button> */}
         {addTaskActive ? <AddTask addTask={addTask} /> : null}
       </div>
     </div>
