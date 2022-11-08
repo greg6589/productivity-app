@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import Input from "../Input/Input";
 
 import UserContext from "../Context/SettingsContext";
 
@@ -31,9 +32,8 @@ const User = () => {
     <>
       <h1 className={style.user_title}>Welcome! Enter your name Please.</h1>
       <form className={style.user_form}>
-        <input
-          type="text"
-          placeholder="Your name"
+        <Input
+          placeholder={"Your name"}
           className={style.user_form__input}
           value={userNameInput}
           onChange={handleUserName}

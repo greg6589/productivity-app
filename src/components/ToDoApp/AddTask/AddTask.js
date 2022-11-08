@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Input from "../../Input/Input";
 import styles from "../AddTask/AddTask.module.css";
 
 import "../AddTask/AddTask.module.css";
@@ -37,9 +38,8 @@ const AddTask = ({ addTask }) => {
 
   return (
     <form className={styles.add_task_form}>
-      <input
-        type="text"
-        placeholder="Task name"
+      <Input
+        placeholder={"Task name"}
         className={styles.add_task_form__input_task}
         value={input}
         onChange={handleTaskName}
