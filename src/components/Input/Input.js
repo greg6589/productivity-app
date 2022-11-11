@@ -1,14 +1,27 @@
 import React from "react";
 
-const Input = ({ placeholder, className, value, onChange, readOnly }) => {
+const Input = ({
+  type,
+  id,
+  placeholder,
+  className,
+  value,
+  onChange,
+  minDate,
+  readOnly,
+  checked,
+}) => {
   return (
     <input
-      type="text"
+      type={type}
+      id={id}
       placeholder={placeholder}
       className={className}
       value={value}
       onChange={onChange}
+      min={minDate}
       readOnly={readOnly}
+      checked={checked}
     />
   );
 };

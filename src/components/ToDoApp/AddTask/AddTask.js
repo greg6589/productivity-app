@@ -40,6 +40,7 @@ const AddTask = ({ addTask }) => {
   return (
     <form className={styles.add_task_form}>
       <Input
+        type={"text"}
         placeholder={"Task name"}
         className={styles.add_task_form__input_task}
         value={input}
@@ -49,8 +50,8 @@ const AddTask = ({ addTask }) => {
         <label className={styles.date__label} htmlFor="date">
           Date:
         </label>
-        <input
-          type="date"
+        <Input
+          type={"date"}
           className={styles.date__input}
           value={date}
           min={minDate}
@@ -61,8 +62,8 @@ const AddTask = ({ addTask }) => {
         <label className={styles.important__label} htmlFor="important">
           Priority
         </label>
-        <input
-          type="checkbox"
+        <Input
+          type={"checkbox"}
           checked={important}
           id={"important"}
           className={styles.important__checkbox}
