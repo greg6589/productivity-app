@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/productivity-app/static/css/main.d6a2b90a.css",
-    "main.js": "/productivity-app/static/js/main.9f749ed5.js",
+    "main.css": "/productivity-app/static/css/main.dc359b21.css",
+    "main.js": "/productivity-app/static/js/main.ed1449d6.js",
     "static/js/845.ec622274.chunk.js": "/productivity-app/static/js/845.ec622274.chunk.js",
     "static/media/sound.wav": "/productivity-app/static/media/sound.5b9ecb195741da638d9c.wav",
     "index.html": "/productivity-app/index.html",
-    "main.d6a2b90a.css.map": "/productivity-app/static/css/main.d6a2b90a.css.map",
-    "main.9f749ed5.js.map": "/productivity-app/static/js/main.9f749ed5.js.map",
+    "main.dc359b21.css.map": "/productivity-app/static/css/main.dc359b21.css.map",
+    "main.ed1449d6.js.map": "/productivity-app/static/js/main.ed1449d6.js.map",
     "845.ec622274.chunk.js.map": "/productivity-app/static/js/845.ec622274.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6a2b90a.css",
-    "static/js/main.9f749ed5.js"
+    "static/css/main.dc359b21.css",
+    "static/js/main.ed1449d6.js"
   ]
 }
