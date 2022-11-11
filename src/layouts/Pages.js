@@ -8,9 +8,12 @@ import Weather from "../pages/Weather";
 const Page = ({ userName }) => {
   return (
     <Routes>
-      <Route path="/" element={<ToDoApp userName={userName} />}></Route>
-      <Route path="/timer" element={<Timer />}></Route>
-      <Route path="/weather" element={<Weather />}></Route>
+      <Route
+        path="productivity-app/"
+        element={<ToDoApp userName={userName} />}
+      ></Route>
+      <Route path="productivity-app/timer" element={<Timer />}></Route>
+      <Route path="productivity-app/weather" element={<Weather />}></Route>
     </Routes>
   );
 };

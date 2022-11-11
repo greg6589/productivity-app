@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 import style from "./Navigation.module.css";
 
 const navList = [
-  { name: "ToDoApp", path: "/" },
-  { name: "Timer", path: "/timer" },
-  { name: "Weather", path: "/weather" },
+  { name: "ToDoApp", path: "productivity-app/" },
+  { name: "Timer", path: "productivity-app/timer" },
+  { name: "Weather", path: "productivity-app/weather" },
 ];
 
 const Navigation = () => {
