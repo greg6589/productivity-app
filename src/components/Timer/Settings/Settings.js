@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 
 import Button from "../../Button/Button";
+import Input from "../../Input/Input";
 import SettingsContext from "../../Context/SettingsContext";
 
 import styles from "./Settings.module.css";
@@ -51,12 +52,12 @@ const Settings = () => {
           name="sessionTime"
           content={"-"}
         />
-        <input
+        <Input
           className={styles.timer_settings_input}
           type="number"
           id={"session"}
           value={sessionTime}
-          readOnly
+          readOnly={"readonly"}
         />
         <Button
           handleClick={timeAddition}
@@ -73,12 +74,12 @@ const Settings = () => {
           name="breakeTime"
           content={"-"}
         />
-        <input
+        <Input
           className={styles.timer_settings_input}
           type="number"
-          id={"breake"}
+          id={"session"}
           value={breakTime}
-          readOnly
+          readOnly={"readonly"}
         />
         <Button
           handleClick={timeAddition}

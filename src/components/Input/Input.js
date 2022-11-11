@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ placeholder, className, value, onChange }) => {
+const Input = ({ placeholder, className, value, onChange, readOnly }) => {
   return (
     <input
       type="text"
@@ -8,6 +8,7 @@ const Input = ({ placeholder, className, value, onChange }) => {
       className={className}
       value={value}
       onChange={onChange}
+      readOnly={readOnly}
     />
   );
 };
