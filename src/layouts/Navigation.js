@@ -15,7 +15,11 @@ const Navigation = () => {
       <NavLink to={item.path}>{item.name}</NavLink>
     </li>
   ));
-  return <ul className={style.navigation}>{menu}</ul>;
+  return (
+    <nav>
+      <ul className={style.navigation}>{menu}</ul>
+    </nav>
+  );
 };
 
 export default Navigation;

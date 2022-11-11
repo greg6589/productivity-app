@@ -41,7 +41,7 @@ const AddTask = ({ addTask }) => {
     <form className={styles.add_task_form}>
       <Input
         type={"text"}
-        placeholder={"Task name"}
+        placeholder="Task name"
         className={styles.add_task_form__input_task}
         value={input}
         onChange={handleTaskName}

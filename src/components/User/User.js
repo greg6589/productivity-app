@@ -33,7 +33,7 @@ const User = () => {
       <h1 className={style.user_title}>Welcome! Enter your name Please.</h1>
       <form className={style.user_form}>
         <Input
-          placeholder={"Your name"}
+          placeholder="Your name"
           className={style.user_form__input}
           value={userNameInput}
           onChange={handleUserName}
