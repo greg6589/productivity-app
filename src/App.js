@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import Navigation from "../layouts/Navigation";
-import Page from "../layouts/Page";
-import User from "../components/User/User";
-import UserContext from "../components/Context/SettingsContext";
+import Navigation from "./layouts/Navigation";
+import Page from "./layouts/Pages";
+import User from "./components/User/User";
+import UserContext from "./components/Context/SettingsContext";
 
 import style from "./App.module.css";
 
@@ -29,7 +29,7 @@ const App = () => {
   return (
     <div className={style.App}>
       <Router>
-        <nav>{<Navigation />}</nav>
+        <Navigation />
         <UserContext.Provider
           value={{
             setUserLogged,
