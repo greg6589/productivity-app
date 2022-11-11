@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 
+import Button from "../../Button/Button";
 import SettingsContext from "../../Context/SettingsContext";
 
 import styles from "./Settings.module.css";
@@ -44,13 +45,12 @@ const Settings = () => {
         <label className={styles.timer_settings_label} htmlFor="session">
           Session timer
         </label>
-        <button
-          onClick={timeSubtraction}
+        <Button
+          handleClick={timeSubtraction}
           className={styles.timer_settings_button}
           name="sessionTime"
-        >
-          -
-        </button>
+          content={"-"}
+        />
         <input
           className={styles.timer_settings_input}
           type="number"
@@ -58,23 +58,21 @@ const Settings = () => {
           value={sessionTime}
           readOnly
         />
-        <button
-          onClick={timeAddition}
+        <Button
+          handleClick={timeAddition}
           className={styles.timer_settings_button}
           name="sessionTime"
-        >
-          +
-        </button>
+          content={"+"}
+        />
         <label htmlFor="breake" className={styles.timer_settings_label}>
           Breake timer
         </label>
-        <button
-          onClick={timeSubtraction}
+        <Button
+          handleClick={timeSubtraction}
           className={styles.timer_settings_button}
           name="breakeTime"
-        >
-          -
-        </button>
+          content={"-"}
+        />
         <input
           className={styles.timer_settings_input}
           type="number"
@@ -82,19 +80,17 @@ const Settings = () => {
           value={breakTime}
           readOnly
         />
-        <button
-          onClick={timeAddition}
+        <Button
+          handleClick={timeAddition}
           className={styles.timer_settings_button}
           name="breakeTime"
-        >
-          +
-        </button>
-        <button
-          onClick={timeSetToLacal}
+          content={"+"}
+        />
+        <Button
+          handleClick={timeSetToLacal}
           className={styles.timer_settings_button_set}
-        >
-          Set
-        </button>
+          content={"Set"}
+        />
       </div>
     </>
   );
