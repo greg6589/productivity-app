@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Navigation from "./layouts/Navigation";
 import Page from "./layouts/Pages";
 import User from "./components/User/User";
-import UserContext from "./components/Context/SettingsContext";
+import UserContext from "./Context/SettingsContext";
 
 import style from "./App.module.css";
 

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Input from "../Input/Input";
 
-import UserContext from "../Context/SettingsContext";
+import UserContext from "../../Context/SettingsContext";
 
 import style from "./User.module.css";
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Counter from "../components/Timer/Counter/Counter";
-import SetingsContext from "../components/Context/SettingsContext";
+import SetingsContext from "../Context/SettingsContext";
 import Settings from "../components/Timer/Settings/Settings";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

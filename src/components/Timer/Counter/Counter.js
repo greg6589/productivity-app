@@ -3,7 +3,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import useSound from "use-sound";
 
 import sound from "../../../sound/sound.wav";
-import SettingsContext from "../../Context/SettingsContext";
+import SettingsContext from "../../../Context/SettingsContext";
 import Button from "../../Button/Button";
 
 import "react-circular-progressbar/dist/styles.css";

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import Button from "../../Button/Button";
 import Input from "../../Input/Input";
-import SettingsContext from "../../Context/SettingsContext";
+import SettingsContext from "../../../Context/SettingsContext";
 
 import styles from "./Settings.module.css";
 
