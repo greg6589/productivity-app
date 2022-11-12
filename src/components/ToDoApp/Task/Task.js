@@ -6,14 +6,13 @@ import { faTrashCan, faCheck } from "@fortawesome/free-solid-svg-icons";
 import styles from "../Task/Task.module.css";
 
 const Task = (props) => {
-  const styleImportant = {
-    backgroundColor: "rgb(224,107,107)",
-  };
   const { text, date, id, active, important, finishDate } = props.task;
+
+  const taskImportant = important ? styles.taskImportant : "";
 
   if (active) {
     return (
-      <li style={important ? styleImportant : null} className={styles.task}>
+      <li className={`${styles.task} ${taskImportant}`}>
         <div className={styles.task__titel}>
           <p>{text}</p>
           <p className={styles.task__title_date}>{date}</p>
@@ -37,7 +36,7 @@ const Task = (props) => {
   } else {
     const finish = new Date(finishDate).toLocaleString();
     return (
-      <li style={important ? styleImportant : null} className={styles.task}>
+      <li className={`${styles.task} ${taskImportant}`}>
         <div className={styles.task__titel}>
           <p>{text}</p>
           <p className={styles.task__title_date}>
