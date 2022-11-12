@@ -38,11 +38,7 @@ const App = () => {
             userName,
           }}
         >
-          {userLogged === false ? (
-            <User />
-          ) : (
-            <section className="page">{<Page userName={userName} />}</section>
-          )}
+          {userLogged ? <Page userName={userName} /> : <User />}
         </UserContext.Provider>
       </Router>
     </div>
