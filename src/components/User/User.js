@@ -1,16 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import Input from "../Input/Input";
-
-import UserContext from "../../Context/SettingsContext";
 
 import style from "./User.module.css";
 
 const User = () => {
   const [userNameInput, setUserNameInput] = useState("");
-
-  const UserIfo = useContext(UserContext);
-  const setUserLogged = UserIfo.setUserLogged;
-  const setUserName = UserIfo.setUserName;
 
   const handleUserName = (e) => {
     setUserNameInput(e.target.value);
@@ -20,9 +14,7 @@ const User = () => {
     e.preventDefault();
     if (userNameInput.length > 0) {
       localStorage.setItem("user", JSON.stringify(userNameInput));
-      setUserName(userNameInput);
       setUserNameInput("");
-      setUserLogged(true);
     } else {
       alert("Please enter the user name.");
     }
