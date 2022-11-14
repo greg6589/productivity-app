@@ -25,16 +25,13 @@ const Timer = () => {
     }
   }, []);
 
+  const toggleSettings = () => {
+    setSettingsIsActive((prev) => !prev);
+  };
+
   return (
     <>
-      <button
-        onClick={() =>
-          settingsIsActive
-            ? setSettingsIsActive(false)
-            : setSettingsIsActive(true)
-        }
-        className={styles.timer_settings_show}
-      >
+      <button onClick={toggleSettings} className={styles.timer_settings_show}>
         {settingsIsActive ? (
           <FontAwesomeIcon icon={faXmark} />
         ) : (
