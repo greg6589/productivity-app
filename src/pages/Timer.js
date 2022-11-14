@@ -10,7 +10,7 @@ import { faGear, faXmark } from "@fortawesome/free-solid-svg-icons";
 import styles from "../pages/Timer.module.css";
 
 const Timer = () => {
-  const [settingsIsActive, setSettingsIsActive] = useState(false);
+  const [isSettingsActive, setIsSettingsActive] = useState(false);
   const [sessionTime, setSessionTime] = useState(30);
   const [breakTime, setBreakTime] = useState(15);
 
@@ -26,13 +26,13 @@ const Timer = () => {
   }, []);
 
   const toggleSettings = () => {
-    setSettingsIsActive((prev) => !prev);
+    setIsSettingsActive((prev) => !prev);
   };
 
   return (
     <>
       <button onClick={toggleSettings} className={styles.timer_settings_show}>
-        {settingsIsActive ? (
+        {isSettingsActive ? (
           <FontAwesomeIcon icon={faXmark} />
         ) : (
           <FontAwesomeIcon icon={faGear} />
@@ -44,10 +44,11 @@ const Timer = () => {
           breakTime,
           setSessionTime,
           setBreakTime,
-          setSettingsIsActive,
+          isSettingsActive,
+          setIsSettingsActive,
         }}
       >
-        {settingsIsActive ? <Settings /> : <Counter />}
+        {isSettingsActive ? <Settings /> : <Counter />}
       </SetingsContext.Provider>
     </>
   );

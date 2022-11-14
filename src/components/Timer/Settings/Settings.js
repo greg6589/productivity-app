@@ -35,7 +35,7 @@ const Settings = () => {
   };
 
   const timeSetToLacal = () => {
-    settingsIfo.setSettingsIsActive(false);
+    settingsIfo.setIsSettingsActive(false);
     localStorage.setItem("sessionTime", sessionTime);
     localStorage.setItem("breakTime", breakTime);
   };

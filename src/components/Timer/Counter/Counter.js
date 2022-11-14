@@ -10,7 +10,7 @@ import "react-circular-progressbar/dist/styles.css";
 import styles from "./Counter.module.css";
 
 const Counter = () => {
-  const [sessionActive, setSessionActive] = useState(false);
+  const [isSessionActive, setIsSessionActive] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(0);
   const [mode, setMode] = useState("work");
   const [play] = useSound(sound, { volume: 0.3 });
@@ -50,7 +50,7 @@ const Counter = () => {
     setSecondsLeft(secondsLeftRef.current);
 
     const interval = setInterval(() => {
-      if (!sessionActive) {
+      if (!isSessionActive) {
         return;
       }
       if (secondsLeftRef.current === 0) {
@@ -60,7 +60,7 @@ const Counter = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [sessionActive, sessionTime, breakTime]);
+  }, [isSessionActive, sessionTime, breakTime]);
 
   const totalSeconds = mode === "work" ? sessionTime * 60 : breakTime * 60;
   const percentage = Math.round((secondsLeft / totalSeconds) * 100);
@@ -76,11 +76,11 @@ const Counter = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    if (!sessionActive) {
-      setSessionActive(true);
+    if (!isSessionActive) {
+      setIsSessionActive(true);
     }
-    if (sessionActive) {
-      setSessionActive(false);
+    if (isSessionActive) {
+      setIsSessionActive(false);
       setMode("work");
     }
   };
@@ -102,7 +102,7 @@ const Counter = () => {
         handleClick={handleClick}
         className={styles.timer_button}
         content={
-          sessionActive ? (
+          isSessionActive ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
