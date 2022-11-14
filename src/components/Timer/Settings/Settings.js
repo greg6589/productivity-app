@@ -13,33 +13,23 @@ const Settings = () => {
   const setSessionTime = settingsIfo.setSessionTime;
   const setBreakTime = settingsIfo.setBreakTime;
 
-  const timeSubtraction = (e) => {
-    if (e.target.name === "sessionTime") {
-      if (sessionTime > 0) {
-        setSessionTime((sessionTime) => sessionTime - 1);
-      }
-    }
-    if (e.target.name === "breakeTime") {
-      if (breakTime > 0) {
-        setBreakTime((breakTime) => breakTime - 1);
-      }
-    }
-  };
-  const timeAddition = (e) => {
-    if (e.target.name === "sessionTime") {
-      setSessionTime((sessionTime) => sessionTime + 1);
-    }
-    if (e.target.name === "breakeTime") {
-      setBreakTime((breakTime) => breakTime + 1);
-    }
-  };
-
   const timeSetToLacal = () => {
     settingsIfo.setIsSettingsActive(false);
     localStorage.setItem("sessionTime", sessionTime);
     localStorage.setItem("breakTime", breakTime);
   };
 
+  const sessionTimeSettings = (time) => {
+    if (sessionTime > 0) {
+      setSessionTime(time);
+    }
+  };
+
+  const breakTimeSettings = (time) => {
+    if (breakTime > 0) {
+      setBreakTime(time);
+    }
+  };
   return (
     <>
       <div className={styles.timer_settings}>
@@ -47,7 +37,7 @@ const Settings = () => {
           Session timer
         </label>
         <Button
-          handleClick={timeSubtraction}
+          handleClick={() => sessionTimeSettings(sessionTime - 1)}
           className={styles.timer_settings_button}
           name="sessionTime"
           content={"-"}
@@ -60,7 +50,7 @@ const Settings = () => {
           readOnly={"readonly"}
         />
         <Button
-          handleClick={timeAddition}
+          handleClick={() => sessionTimeSettings(sessionTime + 1)}
           className={styles.timer_settings_button}
           name="sessionTime"
           content={"+"}
@@ -69,7 +59,7 @@ const Settings = () => {
           Breake timer
         </label>
         <Button
-          handleClick={timeSubtraction}
+          handleClick={() => breakTimeSettings(breakTime - 1)}
           className={styles.timer_settings_button}
           name="breakeTime"
           content={"-"}
@@ -82,7 +72,7 @@ const Settings = () => {
           readOnly={"readonly"}
         />
         <Button
-          handleClick={timeAddition}
+          handleClick={() => breakTimeSettings(breakTime + 1)}
           className={styles.timer_settings_button}
           name="breakeTime"
           content={"+"}

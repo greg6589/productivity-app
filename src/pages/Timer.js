@@ -15,8 +15,8 @@ const Timer = () => {
   const [breakTime, setBreakTime] = useState(15);
 
   useEffect(() => {
-    let sessionTimeLocal = parseInt(localStorage.getItem("sessionTime"));
-    let breakTimeLocal = parseInt(localStorage.getItem("breakTime"));
+    const sessionTimeLocal = parseInt(localStorage.getItem("sessionTime"));
+    const breakTimeLocal = parseInt(localStorage.getItem("breakTime"));
     if (sessionTimeLocal) {
       setSessionTime(sessionTimeLocal);
     }
