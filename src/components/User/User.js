@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Input from "../Input/Input";
+import { useAuthContext } from "../../Context/useAuthContext";
 
 import style from "./User.module.css";
 
 const User = () => {
   const [userNameInput, setUserNameInput] = useState("");
+  const { setUserName } = useAuthContext();
 
   const handleUserName = (e) => {
     setUserNameInput(e.target.value);
@@ -13,6 +15,7 @@ const User = () => {
   const handleClick = (e) => {
     e.preventDefault();
     if (userNameInput.length > 0) {
+      setUserName(userNameInput);
       localStorage.setItem("user", JSON.stringify(userNameInput));
       setUserNameInput("");
     } else {
