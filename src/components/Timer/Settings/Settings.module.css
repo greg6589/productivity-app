@@ -39,3 +39,8 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+.buttonDisable {
+  background-color: rgb(202, 201, 201);
+  cursor: not-allowed;
+}

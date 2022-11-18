@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import Counter from "../components/Timer/Counter/Counter";
-import SetingsContext from "../Context/SettingsContext";
 import Settings from "../components/Timer/Settings/Settings";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,18 +37,29 @@ const Timer = () => {
           <FontAwesomeIcon icon={faGear} />
         )}
       </button>
-      <SetingsContext.Provider
-        value={{
-          sessionTime,
-          breakTime,
-          setSessionTime,
-          setBreakTime,
-          isSettingsActive,
-          setIsSettingsActive,
-        }}
-      >
-        {isSettingsActive ? <Settings /> : <Counter />}
-      </SetingsContext.Provider>
+      {isSettingsActive ? (
+        <Settings
+          value={{
+            sessionTime,
+            breakTime,
+            setSessionTime,
+            setBreakTime,
+            isSettingsActive,
+            setIsSettingsActive,
+          }}
+        />
+      ) : (
+        <Counter
+          value={{
+            sessionTime,
+            breakTime,
+            setSessionTime,
+            setBreakTime,
+            isSettingsActive,
+            setIsSettingsActive,
+          }}
+        />
+      )}
     </>
   );
 };

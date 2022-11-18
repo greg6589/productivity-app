@@ -1,15 +1,15 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import useSound from "use-sound";
 
 import sound from "../../../sound/sound.wav";
-import SettingsContext from "../../../Context/SettingsContext";
 import Button from "../../Button/Button";
 
 import "react-circular-progressbar/dist/styles.css";
 import styles from "./Counter.module.css";
 
-const Counter = () => {
+const Counter = (props) => {
+  const { sessionTime, breakTime } = props.value;
   const [isSessionActive, setIsSessionActive] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(0);
   const [mode, setMode] = useState("work");
@@ -17,10 +17,6 @@ const Counter = () => {
 
   const secondsLeftRef = useRef(secondsLeft);
   const modeRef = useRef(mode);
-
-  const settingsIfo = useContext(SettingsContext);
-  const sessionTime = settingsIfo.sessionTime;
-  const breakTime = settingsIfo.breakTime;
 
   function initTimer() {
     setSecondsLeft(sessionTime * 60);
@@ -74,13 +70,9 @@ const Counter = () => {
     seconds = "0" + seconds;
   }
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    if (!isSessionActive) {
-      setIsSessionActive(true);
-    }
+  const toggleCounter = () => {
+    setIsSessionActive((prev) => !prev);
     if (isSessionActive) {
-      setIsSessionActive(false);
       setMode("work");
     }
   };
@@ -99,7 +91,7 @@ const Counter = () => {
         />
       </div>
       <Button
-        handleClick={handleClick}
+        handleClick={toggleCounter}
         className={styles.timer_button}
         content={
           isSessionActive ? (

@@ -1,35 +1,39 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import Button from "../../Button/Button";
 import Input from "../../Input/Input";
-import SettingsContext from "../../../Context/SettingsContext";
 
 import styles from "./Settings.module.css";
 
-const Settings = () => {
-  const settingsIfo = useContext(SettingsContext);
-  const sessionTime = settingsIfo.sessionTime;
-  const breakTime = settingsIfo.breakTime;
-  const setSessionTime = settingsIfo.setSessionTime;
-  const setBreakTime = settingsIfo.setBreakTime;
+const Settings = (props) => {
+  const {
+    sessionTime,
+    breakTime,
+    setSessionTime,
+    setBreakTime,
+    setIsSettingsActive,
+  } = props.value;
 
   const timeSetToLacal = () => {
-    settingsIfo.setIsSettingsActive(false);
+    setIsSettingsActive(false);
     localStorage.setItem("sessionTime", sessionTime);
     localStorage.setItem("breakTime", breakTime);
   };
 
+  const buttonDisable = sessionTime === 0 ? styles.buttonDisable : "";
+
   const sessionTimeSettings = (time) => {
-    if (sessionTime > 0) {
+    if (sessionTime >= 0) {
       setSessionTime(time);
     }
   };
 
   const breakTimeSettings = (time) => {
-    if (breakTime > 0) {
+    if (breakTime >= 0) {
       setBreakTime(time);
     }
   };
+
   return (
     <>
       <div className={styles.timer_settings}>
@@ -38,9 +42,10 @@ const Settings = () => {
         </label>
         <Button
           handleClick={() => sessionTimeSettings(sessionTime - 1)}
-          className={styles.timer_settings_button}
+          className={`${styles.timer_settings_button} ${buttonDisable}`}
           name="sessionTime"
           content={"-"}
+          disabled={!sessionTime}
         />
         <Input
           className={styles.timer_settings_input}
@@ -60,9 +65,10 @@ const Settings = () => {
         </label>
         <Button
           handleClick={() => breakTimeSettings(breakTime - 1)}
-          className={styles.timer_settings_button}
+          className={`${styles.timer_settings_button} ${buttonDisable}`}
           name="breakeTime"
           content={"-"}
+          disabled={!breakTime}
         />
         <Input
           className={styles.timer_settings_input}
