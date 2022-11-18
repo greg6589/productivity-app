@@ -53,10 +53,6 @@ const Timer = () => {
           value={{
             sessionTime,
             breakTime,
-            setSessionTime,
-            setBreakTime,
-            isSettingsActive,
-            setIsSettingsActive,
           }}
         />
       )}

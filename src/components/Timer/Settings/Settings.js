@@ -20,7 +20,8 @@ const Settings = (props) => {
     localStorage.setItem("breakTime", breakTime);
   };
 
-  const buttonDisable = sessionTime === 0 ? styles.buttonDisable : "";
+  const sessionButtonDisable = sessionTime === 0 ? styles.buttonDisable : "";
+  const breakButtonDisable = breakTime === 0 ? styles.buttonDisable : "";
 
   const sessionTimeSettings = (time) => {
     if (sessionTime >= 0) {
@@ -42,7 +43,7 @@ const Settings = (props) => {
         </label>
         <Button
           handleClick={() => sessionTimeSettings(sessionTime - 1)}
-          className={`${styles.timer_settings_button} ${buttonDisable}`}
+          className={`${styles.timer_settings_button} ${sessionButtonDisable}`}
           name="sessionTime"
           content={"-"}
           disabled={!sessionTime}
@@ -65,7 +66,7 @@ const Settings = (props) => {
         </label>
         <Button
           handleClick={() => breakTimeSettings(breakTime - 1)}
-          className={`${styles.timer_settings_button} ${buttonDisable}`}
+          className={`${styles.timer_settings_button} ${breakButtonDisable}`}
           name="breakeTime"
           content={"-"}
           disabled={!breakTime}
