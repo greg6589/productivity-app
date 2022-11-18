@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/productivity-app/static/css/main.d77a09d5.css",
-    "main.js": "/productivity-app/static/js/main.54fa4401.js",
+    "main.css": "/productivity-app/static/css/main.5bc608f3.css",
+    "main.js": "/productivity-app/static/js/main.2e2342da.js",
     "static/js/845.ec622274.chunk.js": "/productivity-app/static/js/845.ec622274.chunk.js",
     "static/media/sound.wav": "/productivity-app/static/media/sound.5b9ecb195741da638d9c.wav",
     "index.html": "/productivity-app/index.html",
-    "main.d77a09d5.css.map": "/productivity-app/static/css/main.d77a09d5.css.map",
-    "main.54fa4401.js.map": "/productivity-app/static/js/main.54fa4401.js.map",
+    "main.5bc608f3.css.map": "/productivity-app/static/css/main.5bc608f3.css.map",
+    "main.2e2342da.js.map": "/productivity-app/static/js/main.2e2342da.js.map",
     "845.ec622274.chunk.js.map": "/productivity-app/static/js/845.ec622274.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d77a09d5.css",
-    "static/js/main.54fa4401.js"
+    "static/css/main.5bc608f3.css",
+    "static/js/main.2e2342da.js"
   ]
 }
