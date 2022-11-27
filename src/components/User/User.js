@@ -16,7 +16,6 @@ const User = () => {
     e.preventDefault();
     if (userNameInput.length > 0) {
       setUserName(userNameInput);
-      localStorage.setItem("user", JSON.stringify(userNameInput));
       setUserNameInput("");
     } else {
       alert("Please enter the user name.");
