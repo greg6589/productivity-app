@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Input from "../Input/Input";
+import Input from "../Input";
 import { useAuthContext } from "../../Context/useAuthContext";
 
 import style from "./User.module.css";

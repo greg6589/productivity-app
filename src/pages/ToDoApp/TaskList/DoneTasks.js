@@ -1,6 +1,6 @@
 import Task from "../Task/Task";
 import styles from "../TaskList/TaskList.module.css";
-import Button from "../../Button/Button";
+import Button from "../../../components/Button";
 
 const DoneTasks = ({ tasks, deleteTask, handleClick, classIsActive }) => {
   const done = tasks.filter((task) => !task.active);

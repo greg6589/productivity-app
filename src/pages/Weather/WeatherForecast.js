@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
-import { getWeatherData } from "./untils/getWeatherData";
+import { getWeatherData } from "./getWeatherData";
 
 import style from "./WeatherForecast.module.css";
 

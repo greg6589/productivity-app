@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import Counter from "../components/Timer/Counter/Counter";
-import Settings from "../components/Timer/Settings/Settings";
+import Counter from "./Counter";
+import Settings from "./Settings";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "../pages/Timer.module.css";
+import styles from "../Timer/Timer.module.css";
 
 const Timer = () => {
   const [isSettingsActive, setIsSettingsActive] = useState(false);

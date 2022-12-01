@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import useSound from "use-sound";
 
-import sound from "../../../sound/sound.wav";
-import Button from "../../Button/Button";
+import sound from "../../assets/sound.wav";
+import Button from "../../components/Button";
 
 import "react-circular-progressbar/dist/styles.css";
 import styles from "./Counter.module.css";
