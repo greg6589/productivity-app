@@ -83,15 +83,15 @@ const ToDoApp = ({ userName }) => {
     newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
   };
+
   const deleteOldTask = () => {
-    let todayFinishedTasks = [...tasks];
-    let activeTasks = [...tasks];
-    todayFinishedTasks = tasks.filter(
-      (task) =>
-        new Date(task.finishDate).toDateString() === new Date().toDateString()
-    );
-    activeTasks = tasks.filter((task) => task.active);
-    setTasks(activeTasks.concat(todayFinishedTasks));
+    let tasksToSet = tasks.filter((task) => {
+      return (
+        new Date(task.finishDate).toDateString() ===
+          new Date().toDateString() || task.active
+      );
+    });
+    setTasks(tasksToSet);
   };
 
   const showHideDoneTasks = () => {
