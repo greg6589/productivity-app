@@ -2,10 +2,12 @@ import React from "react";
 
 import Button from "../../components/Button";
 import Input from "../../components/Input";
+import useLocalStorageData from "../../hooks/useLocalStorageData";
 
 import styles from "./Settings.module.css";
 
 const Settings = (props) => {
+  const { timeSetToLacal } = useLocalStorageData();
   const {
     sessionTime,
     breakTime,
@@ -14,10 +16,9 @@ const Settings = (props) => {
     setIsSettingsActive,
   } = props.value;
 
-  const timeSetToLacal = () => {
+  const timeSet = () => {
     setIsSettingsActive(false);
-    localStorage.setItem("sessionTime", sessionTime);
-    localStorage.setItem("breakTime", breakTime);
+    timeSetToLacal(sessionTime, breakTime);
   };
 
   const sessionButtonDisable = sessionTime === 0 ? styles.buttonDisable : "";
@@ -85,7 +86,7 @@ const Settings = (props) => {
           content={"+"}
         />
         <Button
-          handleClick={timeSetToLacal}
+          handleClick={timeSet}
           className={styles.timer_settings_button_set}
           content={"Set"}
         />

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "../Input";
 import { useAuthContext } from "../../Context/useAuthContext";
+import useLocalStorageData from "../../hooks/useLocalStorageData";
 
 import style from "./User.module.css";
 

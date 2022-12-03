@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Counter from "./Counter";
 import Settings from "./Settings";
+import useLocalStorageData from "../../hooks/useLocalStorageData";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -9,20 +10,10 @@ import { faGear, faXmark } from "@fortawesome/free-solid-svg-icons";
 import styles from "../Timer/Timer.module.css";
 
 const Timer = () => {
+  const { getSessionTime, getBreakTime } = useLocalStorageData();
   const [isSettingsActive, setIsSettingsActive] = useState(false);
-  const [sessionTime, setSessionTime] = useState(30);
-  const [breakTime, setBreakTime] = useState(15);
-
-  useEffect(() => {
-    const sessionTimeLocal = parseInt(localStorage.getItem("sessionTime"));
-    const breakTimeLocal = parseInt(localStorage.getItem("breakTime"));
-    if (sessionTimeLocal) {
-      setSessionTime(sessionTimeLocal);
-    }
-    if (breakTimeLocal) {
-      setBreakTime(breakTimeLocal);
-    }
-  }, []);
+  const [sessionTime, setSessionTime] = useState(getSessionTime());
+  const [breakTime, setBreakTime] = useState(getBreakTime());
 
   const toggleSettings = () => {
     setIsSettingsActive((prev) => !prev);
